@@ -1,0 +1,82 @@
+para deployar
+
+
+DROP TABLE IF EXISTS new_coating_types;
+DROP TABLE IF EXISTS new_councils;
+DROP TABLE IF EXISTS new_countries;
+DROP TABLE IF EXISTS new_districts;
+DROP TABLE IF EXISTS new_estimate;
+DROP TABLE IF EXISTS new_migrations;
+DROP TABLE IF EXISTS new_line_categories;
+DROP TABLE IF EXISTS new_lines_option;
+DROP TABLE IF EXISTS new_lines;
+DROP TABLE IF EXISTS new_foundation_volume;
+DROP TABLE IF EXISTS new_password_resets;
+DROP TABLE IF EXISTS new_personal_access_tokens;
+DROP TABLE IF EXISTS new_rigid_frames;
+DROP TABLE IF EXISTS new_structures;
+DROP TABLE IF EXISTS new_users;
+DROP TABLE IF EXISTS new_weight_frames;
+DROP TABLE IF EXISTS new_failed_jobs;
+DROP TABLE IF EXISTS new_land_categories;
+DROP TABLE IF EXISTS new_estimates_lines;
+DROP TABLE IF EXISTS new_images;
+DROP TABLE IF EXISTS new_cover_facade_types;
+DROP TABLE IF EXISTS new_tile_types;
+DROP TABLE IF EXISTS new_foundation_volumes;
+
+
+config
+APP_NAME=Solmidas
+APP_ENV=local
+APP_KEY=base64:x/0ZjrZf2oE01YvStCFR73YBLOKr8YMw67ukyEkUm/Y=
+APP_DEBUG=true
+APP_URL=http://localhost
+
+LOG_CHANNEL=stack
+LOG_DEPRECATIONS_CHANNEL=null
+LOG_LEVEL=debug
+
+DB_CONNECTION=mysql 
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=solmi_solmidas
+DB_USERNAME=solmi_root
+DB_PASSWORD=H0st1ng*Solmi2021/
+DB_PREFIX=new_
+
+BROADCAST_DRIVER=log
+CACHE_DRIVER=file
+FILESYSTEM_DRIVER=local
+QUEUE_CONNECTION=sync
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+MEMCACHED_HOST=127.0.0.1
+
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
+
+MAIL_MAILER=smtp
+MAIL_HOST=mail.solmidas.com
+MAIL_PORT=465
+MAIL_USERNAME=solmidas@solmidas.com
+MAIL_PASSWORD=^Z79hz7;x$Ca
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS=solmidas@solmidas.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=
+AWS_USE_PATH_STYLE_ENDPOINT=false
+
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+
+MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
