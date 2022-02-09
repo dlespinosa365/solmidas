@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Structure;
 
-class Image extends Model
+class Media extends Model
 {
     use HasFactory;
+
+    protected $table = 'medias';
 
     protected $hidden = ['created_at', 'updated_at'];
 

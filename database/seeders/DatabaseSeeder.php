@@ -14,6 +14,8 @@ use Database\Seeders\FoundationVolumeSeeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\TileTypeSeeder;
 use Database\Seeders\CoverFacadeTypeSeeder;
+use Database\Seeders\StructureSeeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,7 +37,8 @@ class DatabaseSeeder extends Seeder
             FoundationVolumeSeeder::class,
             UserSeeder::class,
             TileTypeSeeder::class,
-            CoverFacadeTypeSeeder::class
+            CoverFacadeTypeSeeder::class,
+            StructureSeeder::class
         ]);
     }
 }

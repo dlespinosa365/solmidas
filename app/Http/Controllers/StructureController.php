@@ -8,7 +8,7 @@ use App\Helpers\ResponseHelper;
 use App\Models\Line;
 use App\Models\LineOption;
 use App\Models\LineCategory;
-use App\Models\Image;
+use App\Models\Media;
 use App\Helpers\CalculateFunctionsHelper;
 use App\Helpers\LogHelper;
 use Illuminate\Support\Facades\Auth;
@@ -50,6 +50,7 @@ class StructureController extends Controller
             $structureData = $request->only([
                 'withPlatibanda',
                 'description',
+                'title',
                 'distanceBetweenFrames',
                 'shipLength',
                 'distanceBetweenColumns',
@@ -121,7 +122,7 @@ class StructureController extends Controller
                     $insert[$key]['structure_id'] = $structure->id;
      
                 }
-                Image::insert($insert);
+                Media::insert($insert);
                 return true;
              }
              return false;
@@ -331,7 +332,8 @@ class StructureController extends Controller
     }
 
     public function getPublicStructures() {
-        $structures = Structure::where('isPublic', true)->with('images');
+        $structures = Structure::where('isPublic', true)->with('medias')->get();
+        $structures = $structures->map->only(['title', 'description', 'medias']);
         return ResponseHelper::sendSuccess($structures, 200);
     }
 }

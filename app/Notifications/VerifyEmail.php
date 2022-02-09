@@ -17,9 +17,7 @@ class VerifyEmail extends VerifyEmailBase
             return call_user_func(static::$toMailCallback, $notifiable, $verificationUrl);
         }
 
-        // http://127.0.0.1:8000/api/verify-email/1/e7966cc7ebb0f44019f4a91790b5ce938f1b40ab?expires=1642879229&signature=c806ce67ddeb5ed1d5d3ef39f5954b9cee2f7681b395523b8eb74242dd6ca6c2
-        $urlPart = explode('api', $verificationUrl)[1];
-        $verificationUrl = 'https://solmidas.com' . $urlPart;
+        $verificationUrl = str_replace('api.solmidas.com/api/auth', 'solmidas.com/user', $verificationUrl);
 
         return (new MailMessage)
             ->subject(Lang::get('Verificación de correo'))

@@ -12,7 +12,7 @@ use App\Models\Country;
 use App\Models\Estimate;
 use App\Models\TileType;
 use App\Models\CoverFacadeType;
-use App\Models\Image;
+use App\Models\Media;
 
 class Structure extends Model
 {
@@ -27,6 +27,8 @@ class Structure extends Model
     protected $fillable = [
         'code',
         'description',
+        'title',
+        'isPublic',
         'withPlatibanda',
         'distanceBetweenFrames',
         'shipLength',
@@ -63,8 +65,7 @@ class Structure extends Model
         'rigid_frame_id',
         'council_id',
         'land_category_id',
-        'coating_type_id',
-        'country_id' 
+        'coating_type_id'
     ];
 
     /**
@@ -75,6 +76,8 @@ class Structure extends Model
     protected $attributes = [
         'code' => '',
         'description' => '',
+        'title' => '',
+        'isPublic' => false,
         'withPlatibanda' => false,
         'distanceBetweenFrames' => 0,
         'shipLength' => 0,
@@ -111,8 +114,7 @@ class Structure extends Model
         'rigid_frame_id' => null,
         'council_id' => null,
         'land_category_id' => null,
-        'coating_type_id' => null,
-        'country_id' => null
+        'coating_type_id' => null
     ];
 
 
@@ -220,11 +222,9 @@ class Structure extends Model
         return false;
     }
 
-    public function images() {
-        return $this->hasMany(Image::class);
+    public function medias() {
+        return $this->hasMany(Media::class);
     }
-
-    
 
     public function getNew() {
         $countries = Country::allInCascade();

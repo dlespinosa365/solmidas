@@ -17,8 +17,9 @@ class CreateStructuresTable extends Migration
         Schema::create('structures', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->boolean('code')->nullable();
+            $table->string('code')->nullable();
             $table->longText('description')->nullable();
+            $table->string('title')->nullable();
             $table->boolean('isPublic')->default(false);
             $table->boolean('withPlatibanda')->default(false);
             $table->integer('distanceBetweenFrames')->nullable();
@@ -28,6 +29,8 @@ class CreateStructuresTable extends Migration
             $table->integer('altitudeOfTheWork')->nullable();
             $table->boolean('shoes')->default(false);
             $table->boolean('floor')->default(false);
+            $table->integer('coverDensity')->nullable();
+            $table->integer('facadeDensity')->nullable();
             $table->boolean('metalClosure')->default(false);
             $table->boolean('anticorrosiveTreatment')->default(false);
             $table->boolean('emergencyDoors')->default(false);
