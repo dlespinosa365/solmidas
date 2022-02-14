@@ -25,6 +25,10 @@ class CreateLinesTable extends Migration
             $table->double('unitPrice')->default(0);
             $table->string('calculateFunction')->nullable();
             $table->string('constans')->nullable();
+            $table->boolean('isUsedInForMainStructureCalculate')->default(false);
+            $table->boolean('isUsedInSecondaryStructureCalculate')->default(false);
+            $table->boolean('isUsedInMetalClosureCalculate')->default(false);
+            $table->boolean('isUsedInFacadeClosureCalculate')->default(false);
             $table->foreignIdFor(LineCategory::class)->nullable()->unsigned();
         });
     }

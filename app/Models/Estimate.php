@@ -11,6 +11,8 @@ class Estimate extends Model
 {
     use HasFactory;
 
+    protected $table = 'estimate';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -40,5 +42,16 @@ class Estimate extends Model
     public function structure()
     {
         return $this->belongsTo(Structure::class);
+    }
+
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($estimate) { // before delete() method call this
+             $estimate->linesOptions()->each(function($line) {
+                $line->delete(); // <-- direct deletion
+             });
+             // do the rest of the cleanup...
+        });
     }
 }

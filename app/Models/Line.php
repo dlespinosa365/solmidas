@@ -12,6 +12,7 @@ use App\Helpers\CalculateFunctionsHelper;
 class Line extends Model
 {
     use HasFactory;
+    
     protected $hidden = ['created_at', 'updated_at'];
 
     /**
@@ -33,11 +34,10 @@ class Line extends Model
 
     public function getAmount(Structure $structure) {
         $method = $this->calculateFunction;
-        
         try {
             if ($method != '' && $method != null) {
                 if (method_exists(CalculateFunctionsHelper::class, $method)) {
-                    $response = CalculateFunctionsHelper::$method($structure, $this) * $this->unitPrice;
+                    $response = CalculateFunctionsHelper::$method($structure, $this);
                     return $response;
                 } else {
                     LogHelper::debug('El metodo definido para la linea ' . $this->number . ' no existe');
@@ -60,4 +60,9 @@ class Line extends Model
     {
         return $this->belongsTo(LineCategory::class);
     } 
+
+    public function line()
+    {
+        return $this->hasOne(Line::class);
+    }
 }

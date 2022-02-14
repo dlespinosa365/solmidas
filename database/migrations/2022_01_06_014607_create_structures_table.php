@@ -51,6 +51,10 @@ class CreateStructuresTable extends Migration
             $table->integer('sectionedDoorsMajorThan16width')->nullable();
             $table->boolean('requireMontage')->default(false);
 
+            $table->double('weightFrame')->default(0);
+            $table->double('foundationVolume')->default(0);
+            $table->double('countFrame')->default(0);
+
             //user relation
             $table->foreignIdFor(User::class)->nullable()->unsigned();
         });

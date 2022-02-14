@@ -67,7 +67,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'TwoTwo',
             'constans' => '{"multiplicador1":1.2}',
             'line_category_id' => 2,
-            'identifier' => 'F/M Estructuras metálicas principales'
+            'identifier' => 'F/M Estructuras metálicas principales',
+            'isUsedInForMainStructureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '2.3',
@@ -78,7 +79,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'TwoThree',
             'constans' => '{"multiplicador1":1.2}',
             'line_category_id' => 2,
-            'identifier' => 'F. de estructuras metálicas principales'
+            'identifier' => 'F. de estructuras metálicas principales',
+            'isUsedInForMainStructureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '2.4',
@@ -89,7 +91,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'TwoFour',
             'constans' => '{"multiplicador1":1.2}',
             'line_category_id' => 2,
-            'identifier' => 'F/M de estructuras metálicas principales'
+            'identifier' => 'F/M de estructuras metálicas principales',
+            'isUsedInForMainStructureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '2.5',
@@ -100,7 +103,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'TwoFive',
             'constans' => '{"multiplicador1":1.2}',
             'line_category_id' => 2,
-            'identifier' => 'F. de estructuras metálicas principales'
+            'identifier' => 'F. de estructuras metálicas principales',
+            'isUsedInForMainStructureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '3.1',
@@ -111,7 +115,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'ThreeOne',
             'constans' => '{"multiplicador1":0.25}',
             'line_category_id' => 3,
-            'identifier' => 'E/A de estructuras metálicas secundarias'
+            'identifier' => 'E/A de estructuras metálicas secundarias',
+            'isUsedInSecondaryStructureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '3.2',
@@ -156,7 +161,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'FourOne',
             'constans' => '{"multiplicador1":1.02}',
             'line_category_id' => 4,
-            'identifier' => 'M/I de paneles sandwich en Cubierta'
+            'identifier' => 'M/I de paneles sandwich en Cubierta',
+            'isUsedInMetalClosureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '4.2',
@@ -168,7 +174,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'FourTwo',
             'constans' => '{"multiplicador1":1.02}',
             'line_category_id' => 4,
-            'identifier' => 'M/I de paneles sandwich en Cubierta'
+            'identifier' => 'M/I de paneles sandwich en Cubierta',
+            'isUsedInMetalClosureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '4.3',
@@ -180,7 +187,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'FourThree',
             'constans' => '{"multiplicador1":1.02}',
             'line_category_id' => 4,
-            'identifier' => 'M/I de paneles sandwich en Cubierta'
+            'identifier' => 'M/I de paneles sandwich en Cubierta',
+            'isUsedInMetalClosureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '4.4',
@@ -192,7 +200,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'FourFour',
             'constans' => '{"multiplicador1":1.02}',
             'line_category_id' => 4,
-            'identifier' => 'M/I de paneles sandwich en fachada'
+            'identifier' => 'M/I de paneles sandwich en fachada',
+            'isUsedInFacadeClosureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '4.5',
@@ -204,7 +213,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'FourFive',
             'constans' => '{"multiplicador1":1.02}',
             'line_category_id' => 4,
-            'identifier' => 'M/I de paneles sandwich en fachada'
+            'identifier' => 'M/I de paneles sandwich en fachada',
+            'isUsedInFacadeClosureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '4.6',
@@ -216,7 +226,8 @@ class LineSeeder extends Seeder
             'calculateFunction' => 'FourSix',
             'constans' => '{"multiplicador1":1.02}',
             'line_category_id' => 4,
-            'identifier' => 'M/I de paneles sandwich en fachada'
+            'identifier' => 'M/I de paneles sandwich en fachada',
+            'isUsedInFacadeClosureCalculate' => true
         ]);
         DB::table('lines')->insert([
             'number' => '4.7',

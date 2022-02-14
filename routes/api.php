@@ -28,6 +28,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     //structure
     Route::put('/structure/change-code/{id}', [StructureController::class, 'changeCode']);
+    Route::post('/structure/store', [StructureController::class, 'store']);
+    Route::get('/structure/show/{id}', [StructureController::class, 'show']);
+    Route::get('/structure/edit', [StructureController::class, 'show']);
+    Route::delete('/structure/destroy/{id}', [StructureController::class, 'destroy']);
+    Route::get('/structure', [StructureController::class, 'index']);
 });
 
 // full protected routes for admin

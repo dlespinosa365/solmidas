@@ -22,6 +22,7 @@ class CreateLinesOptionTable extends Migration
             $table->foreignIdFor(Estimate::class)->nullable()->unsigned(); 
             $table->foreignIdFor(Line::class)->nullable()->unsigned();
             $table->double('total')->default(0);
+            $table->double('subtotal')->default(0);
         });
     }
 

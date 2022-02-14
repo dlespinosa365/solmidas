@@ -17,7 +17,9 @@ class CreateEstimateTable extends Migration
         Schema::create('estimate', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->double('total');
+            $table->double('total')->default(0);
+            $table->integer('totalHours')->default(0);
+            $table->foreignIdFor(Structure::class)->nullable()->unsigned();
         });
     }
 

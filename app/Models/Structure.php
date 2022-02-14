@@ -226,6 +226,18 @@ class Structure extends Model
         return $this->hasMany(Media::class);
     }
 
+
+    public static function boot() {
+        parent::boot();
+        self::deleting(function($structure) { // before delete() method call this
+             $structure->estimate()->delete();
+             $structure->medias()->each(function($media) {
+                $media->delete(); // <-- direct deletion
+             });
+             // do the rest of the cleanup...
+        });
+    }
+
     public function getNew() {
         $countries = Country::allInCascade();
         $coatingTypes = CoatingType::all();

@@ -7,7 +7,6 @@ use App\Models\WeightFrame;
 use App\Models\FoundationVolume;
 use App\Helpers\LogHelper;
 use App\Models\Line;
-use Illuminate\Support\Facades\DB;
 
 
 class CalculateFunctionsHelper
@@ -19,6 +18,7 @@ class CalculateFunctionsHelper
             where('distenceBetweenFrames', '=', $structure->distanceBetweenFrames)->
             where('columnsHight', '=', $structure->altitudeOfTheWork)->
             where('withPlatibanda', '=', $structure->withPlatibanda)->
+            where('land_category_id', '=', $structure->land_category_id)->
             where('zone', '=', $council->zone)->
             where('hight', '=', $council->hight)->
             where('case', '=', $council->case)->first();
