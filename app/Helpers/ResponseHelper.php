@@ -2,6 +2,8 @@
 
 namespace App\Helpers;
 
+use Illuminate\Support\Facades\Lang;
+
 class ResponseHelper
 {
     static function sendSuccess($data,  $code) {
@@ -9,6 +11,6 @@ class ResponseHelper
     }
 
     static function sendError($message, $code) {
-        return response(['success' => false, 'message' => $message], $code ? $code : 500);
+        return response(['success' => false, 'message' => Lang::get($message)], $code ? $code : 500);
     }
 }

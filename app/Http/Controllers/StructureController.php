@@ -43,18 +43,11 @@ class StructureController extends Controller
         $user = Auth::user();
         $structure = StructureHelper::getStructureByRequest($request);
         try {
-            $structure->code = StructureHelper::generateCode($structure);
-            $structure->user_id = $user->id;
+            $structure = StructureHelper::setAllDataInStructure($structure, $user);
             if ($user->isAdmin) {
                 $structure->isPublic = true;
                 $this->addFilesToStructure($request, $structure);
             }
-            $structure->save();
-            $estimateData = StructureHelper::createEstimateDataForStructure($structure);
-            $structure->weightFrame = $estimateData['weightFrame'];
-            $structure->foundationVolume = $estimateData['foundationVolume'];
-            $structure->countFrame = $estimateData['countFrame'];
-            $structure->update();
             $structure = StructureHelper::getFullStructure($structure->id);
             return ResponseHelper::sendSuccess($structure, 200);
         }
@@ -75,7 +68,7 @@ class StructureController extends Controller
       if ($structure != null) {  
         return ResponseHelper::sendSuccess($structure, 200);
       }
-      return ResponseHelper::sendError('Configuracion no encontrada', 400);
+      return ResponseHelper::sendError('Configuration not found.', 400);
     }
 
     /**
@@ -95,7 +88,7 @@ class StructureController extends Controller
                 'structure_fields_data' => $structureData
             ], 200);
         }
-        return ResponseHelper::sendError('Configuracion no encontrada', 400);
+        return ResponseHelper::sendError('Configuration not found.', 400);
     }
 
     /**
@@ -127,7 +120,7 @@ class StructureController extends Controller
             $structure->delete();
             return ResponseHelper::sendSuccess($structure, 200);
         }
-        return ResponseHelper::sendError('Configuracion no encontrada', 400);
+        return ResponseHelper::sendError('Configuration not found.', 400);
     }
 
     
@@ -138,20 +131,44 @@ class StructureController extends Controller
             'code' => 'required|string',
         ]);
         $user = Auth::user();
-        $structure = Structure::where('id', $id)->where('user_id', $user->id);
+        $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
         if ($structure != null) {
             $structure->code = $request->input('code');
             $structure->save();
             return ResponseHelper::sendSuccess($structure, 200);
         }
-        return ResponseHelper::sendError('No se pudo actualizar el codigo', 404);
+        return ResponseHelper::sendError('The code can\'t be updated.', 404);
     }
 
     public function update($id, Request $request) {
-
+        $user = Auth::user();
+        $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
+        if ($user->isAdmin) {
+            StructureHelper::validateStructureForAdmin($request);
+        } else {
+            StructureHelper::validateStructure($request);
+        }
+        if ($structure != null) {
+            try {
+                $structureData = StructureHelper::getRequestDataByAdmin($request, $user->isAdmin);
+                $structure->fill($structureData);
+                $structure->estimate->delete();
+                $structure = StructureHelper::setAllDataInStructure($structure, $user);
+                $structure->medias()->delete();
+                if ($user->isAdmin) {
+                    $structure->isPublic = true;
+                    $this->addFilesToStructure($request, $structure);
+                }
+                $structure->update();
+                $structure = StructureHelper::getFullStructure($structure->id);
+                return ResponseHelper::sendSuccess($structure, 200);
+            } catch (\Throwable $th) {
+               
+            }
+            
+        }
+        return ResponseHelper::sendError('Configuration not found.', 400);
     }
-
-
     public function getPublicStructures() {
         $structures = Structure::where('isPublic', true)->with('medias')->get();
         $structures = $structures->map->only(['title', 'description', 'medias']);

@@ -4,10 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Helpers\ResponseHelper;
+use Illuminate\Support\Facades\App;
 
-class IsAdmin
+class SetLocale
 {
     /**
      * Handle an incoming request.
@@ -19,10 +18,8 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        
-        if (auth()->user()->isAdmin === 1) {
-            return $next($request);
-        }
-        return ResponseHelper::sendError('User is not admin.', 403);
+        if ($request->header('Accept-Language') && in_array($request->header('Accept-Language'), ['en', 'es', 'pt']))
+            App::setLocale($request->header('Accept-Language'));
+        return $next($request);
     }
 }

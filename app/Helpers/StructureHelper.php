@@ -10,6 +10,8 @@ use App\Models\LineOption;
 use App\Models\Estimate;
 use App\Models\Media;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+
 
 class StructureHelper
 {
@@ -53,16 +55,13 @@ class StructureHelper
         ]);
     }
 
-    static public function getStructureByRequest(Request $request) {
-        $user = Auth::user();
-        if ($user != null && $user->isAdmin) {
-            StructureHelper::validateStructureForAdmin($request);
+    static function getRequestDataByAdmin(Request $request, bool $isAdmin = false) {
+        if ($isAdmin) {
             $structureData = $request->only([
                 'title',
                 'description'
             ]);
         } else {
-            StructureHelper::validateStructure($request);
             $structureData = $request->only([
                 'withPlatibanda',
                 'distanceBetweenFrames',
@@ -101,6 +100,19 @@ class StructureHelper
                 'land_category_id',
                 'coating_type_id'
             ]);
+        }
+        return $structureData;
+
+    }
+
+    static function getStructureByRequest(Request $request) {
+        $user = Auth::user();
+        if ($user != null && $user->isAdmin) {
+            StructureHelper::validateStructureForAdmin($request);
+            $structureData = StructureHelper::getRequestDataByAdmin($request, true);
+        } else {
+            StructureHelper::validateStructure($request);
+            $structureData = StructureHelper::getRequestDataByAdmin($request, false);
         }
         $structure = new Structure($structureData);
         return $structure;
@@ -223,6 +235,22 @@ class StructureHelper
         $code .= sprintf("%'.03d\n", $structure->id);
         $code .= date('y');
         return $code;
+    }
+
+    static function removeEstimateAndLinesOptionsFromStructure(Structure $structure) {
+         return $structure->estimate->delete();   
+    }
+
+    static function setAllDataInStructure(Structure $structure, $user) {
+        $structure->code = StructureHelper::generateCode($structure);
+        $structure->user_id = $user->id;
+        $structure->save();
+        $estimateData = StructureHelper::createEstimateDataForStructure($structure);
+        $structure->weightFrame = $estimateData['weightFrame'];
+        $structure->foundationVolume = $estimateData['foundationVolume'];
+        $structure->countFrame = $estimateData['countFrame'];
+        $structure->update();
+        return $structure;
     }
 
 }

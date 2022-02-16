@@ -4,10 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Helpers\ResponseHelper;
 
-class IsAdmin
+class HasVerifiedEmail
 {
     /**
      * Handle an incoming request.
@@ -20,9 +19,9 @@ class IsAdmin
     public function handle(Request $request, Closure $next, ...$guards)
     {
         
-        if (auth()->user()->isAdmin === 1) {
+        if (auth()->user()->hasVerifiedEmail()) {
             return $next($request);
         }
-        return ResponseHelper::sendError('User is not admin.', 403);
+        return ResponseHelper::sendError('Email is not verified.', 403);
     }
 }

@@ -109,7 +109,7 @@ class LineController extends Controller
     {
         $line = Line::find($id);
         if ($line == null) {
-            return ResponseHelper::sendError('Linea no encontrada', 404);
+            return ResponseHelper::sendError('Line not found.', 404);
         }
         $fields = $request->validate([
             'number' => 'required|string',

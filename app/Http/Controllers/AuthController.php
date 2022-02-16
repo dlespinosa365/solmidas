@@ -72,7 +72,7 @@ class AuthController extends Controller
 
         // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
-            return ResponseHelper::sendError('Credenciales invalidas', 403);
+            return ResponseHelper::sendError('Invalid credentials', 403);
         }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
@@ -109,7 +109,7 @@ class AuthController extends Controller
             $response = [];
             return ResponseHelper::sendSuccess($response, 200);
         } 
-        return ResponseHelper::sendError('El email no pudo ser enviado', 500);
+        return ResponseHelper::sendError('The email can\'t be sent.', 500);
 
     }
 
@@ -139,7 +139,7 @@ class AuthController extends Controller
             return ResponseHelper::sendSuccess([], 200);
         }
 
-        return ResponseHelper::sendError('La contraseña no pudo ser reestablecida.', 500);
+        return ResponseHelper::sendError('The password can\'t be restored.', 500);
 
     }
 }
