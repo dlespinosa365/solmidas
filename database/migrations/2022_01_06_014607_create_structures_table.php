@@ -26,7 +26,6 @@ class CreateStructuresTable extends Migration
             $table->integer('shipLength')->nullable();
             $table->integer('distanceBetweenColumns')->nullable();
             $table->integer('columnHeight')->nullable();
-            $table->integer('altitudeOfTheWork')->nullable();
             $table->boolean('shoes')->default(false);
             $table->boolean('floor')->default(false);
             $table->integer('coverDensity')->nullable();
@@ -54,6 +53,7 @@ class CreateStructuresTable extends Migration
             $table->double('weightFrame')->default(0);
             $table->double('foundationVolume')->default(0);
             $table->double('countFrame')->default(0);
+            $table->integer('hoursOfWork')->default(0);
 
             //user relation
             $table->foreignIdFor(User::class)->nullable()->unsigned();

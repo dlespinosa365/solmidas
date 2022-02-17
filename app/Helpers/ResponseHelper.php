@@ -11,6 +11,6 @@ class ResponseHelper
     }
 
     static function sendError($message, $code) {
-        return response(['success' => false, 'message' => Lang::get($message)], $code ? $code : 500);
+        return response(['success' => false, 'message' => Lang::get('messages.'.$message)], $code ? $code : 500);
     }
 }

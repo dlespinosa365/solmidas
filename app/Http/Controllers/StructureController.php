@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Helpers\ResponseHelper;
 use Illuminate\Support\Facades\Auth;
 use App\Helpers\StructureHelper;
+use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 class StructureController extends Controller
 {
@@ -63,12 +64,12 @@ class StructureController extends Controller
      */
     public function show($id)
     {
-      $user = Auth::user();
-      $structure = StructureHelper::getFullStructure($id, $user->id);
-      if ($structure != null) {  
-        return ResponseHelper::sendSuccess($structure, 200);
-      }
-      return ResponseHelper::sendError('Configuration not found.', 400);
+        $user = Auth::user();
+        $structure = StructureHelper::getFullStructure($id, $user->id);
+        if ($structure != null) {
+            return ResponseHelper::sendSuccess($structure, 200);
+        }
+        return ResponseHelper::sendError('Configuration not found.', 400);
     }
 
     /**
@@ -123,7 +124,6 @@ class StructureController extends Controller
         return ResponseHelper::sendError('Configuration not found.', 400);
     }
 
-    
 
     public function changeCode($id, Request $request)
     {
@@ -140,12 +140,14 @@ class StructureController extends Controller
         return ResponseHelper::sendError('The code can\'t be updated.', 404);
     }
 
-    public function update($id, Request $request) {
+    public function update($id, Request $request)
+    {
         $user = Auth::user();
         $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
         if ($user->isAdmin) {
             StructureHelper::validateStructureForAdmin($request);
-        } else {
+        }
+        else {
             StructureHelper::validateStructure($request);
         }
         if ($structure != null) {
@@ -162,16 +164,32 @@ class StructureController extends Controller
                 $structure->update();
                 $structure = StructureHelper::getFullStructure($structure->id);
                 return ResponseHelper::sendSuccess($structure, 200);
-            } catch (\Throwable $th) {
-               
             }
-            
+            catch (\Throwable $th) {
+
+            }
+
         }
         return ResponseHelper::sendError('Configuration not found.', 400);
     }
-    public function getPublicStructures() {
+    public function getPublicStructures()
+    {
         $structures = Structure::where('isPublic', true)->with('medias')->get();
         $structures = $structures->map->only(['title', 'description', 'medias']);
         return ResponseHelper::sendSuccess($structures, 200);
     }
+
+    public function pdf($id) {
+        $user = Auth::user();
+        $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
+        if ($structure) {
+            $structureFull = StructureHelper::getFullStructure($structure->id, $user->id);
+            $data = ['structure' => $structureFull];
+            $pdf = PDF::loadView('pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
+            //dd($structure->code. '.pdf');
+            return $pdf->download('e.pdf');
+        }
+        return ResponseHelper::sendError('Configuration not found.', 400);
+    }
+
 }

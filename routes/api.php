@@ -35,6 +35,7 @@ Route::group(['middleware' => ['setLocale']], function () {
         Route::delete('/structure/destroy/{id}', [StructureController::class, 'destroy']);
         Route::put('/structure/update/{id}', [StructureController::class, 'update']);
         Route::get('/structure', [StructureController::class, 'index']);
+        Route::get('/structure/pdf/{id}', [StructureController::class, 'pdf']);
     });
 
 

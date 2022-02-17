@@ -16,7 +16,7 @@ class CalculateFunctionsHelper
         $row = WeightFrame::
             where('distenceBetweenColumns', '=', $structure->distanceBetweenColumns)->
             where('distenceBetweenFrames', '=', $structure->distanceBetweenFrames)->
-            where('columnsHight', '=', $structure->altitudeOfTheWork)->
+            where('columnsHight', '=', $structure->columnHeight)->
             where('withPlatibanda', '=', $structure->withPlatibanda)->
             where('land_category_id', '=', $structure->land_category_id)->
             where('zone', '=', $council->zone)->
@@ -38,7 +38,7 @@ class CalculateFunctionsHelper
         $row = FoundationVolume::
             where('distenceBetweenColumns', '=', $structure->distanceBetweenColumns)->
             where('distenceBetweenFrames', '=', $structure->distanceBetweenFrames)->
-            where('columnsHight', '=', $structure->altitudeOfTheWork)->first();
+            where('columnsHight', '=', $structure->columnHeight)->first();
             LogHelper::debug(
                 'volumen de zapata',
                 $structure,
@@ -293,7 +293,7 @@ class CalculateFunctionsHelper
             $response = 0;
             if ($structure->isFacadeSandwichPanelType() && $structure->facadeDensity == 50) {
                 $response = ($structure->shipLength * 2  + $constant->distanceBetweenColumns * 2) 
-                * $structure->altitudeOfTheWork 
+                * $structure->columnHeight 
                 * $constant->multiplicador1;
             }
             return $response;
@@ -309,7 +309,7 @@ class CalculateFunctionsHelper
             $response = 0;
             if ($structure->isFacadeSandwichPanelType() && $structure->facadeDensity == 40) {
                 $response = ($structure->shipLength * 2  + $constant->distanceBetweenColumns * 2) 
-                * $structure->altitudeOfTheWork 
+                * $structure->columnHeight 
                 * $constant->multiplicador1;
             }
             return $response;
@@ -325,7 +325,7 @@ class CalculateFunctionsHelper
             $response = 0;
             if ($structure->isFacadeSandwichPanelType() && $structure->facadeDensity == 30) {
                 $response = ($structure->shipLength * 2  + $constant->distanceBetweenColumns * 2) 
-                * $structure->altitudeOfTheWork 
+                * $structure->columnHeight 
                 * $constant->multiplicador1;
             }
             return $response;
@@ -391,7 +391,7 @@ class CalculateFunctionsHelper
             if ($structure->isFacadeLanaDeRocaPanelType() && $structure->coverDensity == 50) {
                 $response = ($structure->shipLength * 2
                 + $structure->distanceBetweenColumns * 2)
-                * $structure->altitudeOfTheWork * $constant->multiplicador1;
+                * $structure->columnHeight * $constant->multiplicador1;
             }
             return $response;
         } catch (\Throwable $th) {
@@ -407,7 +407,7 @@ class CalculateFunctionsHelper
             if ($structure->isFacadeLanaDeRocaPanelType() && $structure->coverDensity == 40) {
                 $response = ($structure->shipLength * 2
                 + $structure->distanceBetweenColumns * 2)
-                * $structure->altitudeOfTheWork * $constant->multiplicador1;
+                * $structure->columnHeight * $constant->multiplicador1;
             }
             return $response;
         } catch (\Throwable $th) {
@@ -423,7 +423,7 @@ class CalculateFunctionsHelper
             if ($structure->isFacadeLanaDeRocaPanelType() && $structure->coverDensity == 30) {
                 $response = ($structure->shipLength * 2
                 + $structure->distanceBetweenColumns * 2)
-                * $structure->altitudeOfTheWork * $constant->multiplicador1;
+                * $structure->columnHeight * $constant->multiplicador1;
             }
             return $response;
         } catch (\Throwable $th) {
@@ -455,7 +455,7 @@ class CalculateFunctionsHelper
             if ($structure->isCoverTejasSimpleType()) {
                 $response = (2 * $structure->shipLength +
                 2 * $structure->distanceBetweenColumns) *
-                $structure->altitudeOfTheWork * $constant->multiplicador1;
+                $structure->columnHeight * $constant->multiplicador1;
             }
             return $response;
         } catch (\Throwable $th) {

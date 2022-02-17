@@ -72,7 +72,7 @@ class AuthController extends Controller
 
         // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
-            return ResponseHelper::sendError('Invalid credentials', 403);
+            return ResponseHelper::sendError('Invalid credentials.', 403);
         }
 
         $token = $user->createToken('myapptoken')->plainTextToken;
