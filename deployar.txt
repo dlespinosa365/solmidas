@@ -1,7 +1,6 @@
 para deployar
 
 
-DROP TABLE IF EXISTS new_coating_types;
 DROP TABLE IF EXISTS new_councils;
 DROP TABLE IF EXISTS new_countries;
 DROP TABLE IF EXISTS new_districts;
