@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\RigidFrame;
 use App\Models\Council;
 use App\Models\LandCategory;
-use App\Models\CoatingType;
 use App\Models\Country;
 use App\Models\Estimate;
 use App\Models\TileType;
@@ -64,8 +63,7 @@ class Structure extends Model
         
         'rigid_frame_id',
         'council_id',
-        'land_category_id',
-        'coating_type_id'
+        'land_category_id'
     ];
 
     /**
@@ -113,8 +111,7 @@ class Structure extends Model
         'user_id' => null,
         'rigid_frame_id' => null,
         'council_id' => null,
-        'land_category_id' => null,
-        'coating_type_id' => null
+        'land_category_id' => null
     ];
 
 
@@ -133,10 +130,6 @@ class Structure extends Model
         return $this->belongsTo(LandCategory::class);
     } 
 
-    public function coatingType()
-    {
-        return $this->belongsTo(CoatingType::class);
-    } 
 
     public function country()
     {
@@ -240,14 +233,12 @@ class Structure extends Model
 
     public function getNew() {
         $countries = Country::allInCascade();
-        $coatingTypes = CoatingType::all();
         $landCategories = LandCategory::all();
         $rigidFrames = RigidFrame::all();
         $tileTypes = TileType::all();
         $coverFacadeTypes = CoverFacadeType::all();
         return [
             'countriesOptions' => $countries,
-            'coatingTypesOptions' => $coatingTypes,
             'landCategoriesOptions' => $landCategories,
             'rigidFramesOptions' => $rigidFrames,
             'tileTypeOptions' => $tileTypes,

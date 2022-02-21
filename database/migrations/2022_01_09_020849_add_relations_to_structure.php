@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\RigidFrame;
 use App\Models\Council;
 use App\Models\LandCategory;
-use App\Models\CoatingType;
 use App\Models\Estimate;
 use App\Models\TileType;
 use App\Models\CoverFacadeType;
@@ -25,7 +24,6 @@ class AddRelationsToStructure extends Migration
              $table->foreignIdFor(RigidFrame::class)->nullable()->unsigned();
              $table->foreignIdFor(Council::class)->nullable()->unsigned();
              $table->foreignIdFor(LandCategory::class)->nullable()->unsigned();
-             $table->foreignIdFor(CoatingType::class)->nullable()->unsigned();
              $table->foreignIdFor(Estimate::class)->nullable()->unsigned();
              $table->foreignIdFor(TileType::class, 'cover_tile_type')->nullable()->unsigned();
              $table->foreignIdFor(TileType::class, 'facade_tile_type')->nullable()->unsigned();
@@ -45,8 +43,9 @@ class AddRelationsToStructure extends Migration
             $table->dropForeign(RigidFrame::class);
             $table->dropForeign(Council::class);
             $table->dropForeign(LandCategory::class);
-            $table->dropForeign(CoatingType::class);
+            $table->dropForeign(CoverFacadeType::class);
             $table->dropForeign(Estimate::class);
+            $table->dropForeign(TileType::class);
         });
     }
 }

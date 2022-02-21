@@ -97,8 +97,7 @@ class StructureHelper
                 'requireMontage',
                 'rigid_frame_id',
                 'council_id',
-                'land_category_id',
-                'coating_type_id'
+                'land_category_id'
             ]);
         }
         return $structureData;

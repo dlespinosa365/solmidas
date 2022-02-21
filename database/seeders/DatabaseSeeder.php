@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\CountrySeeder;
 use Database\Seeders\RigidFrameSeeder;
 use Database\Seeders\LandCategorySeeder;
-use Database\Seeders\CoatingTypeSeeder;
 use Database\Seeders\LineSeeder;
 use Database\Seeders\LineCategorySeeder;
 use Database\Seeders\WeightFrameSeeder;
@@ -30,7 +29,6 @@ class DatabaseSeeder extends Seeder
             CountrySeeder::class,
             RigidFrameSeeder::class,
             LandCategorySeeder::class,
-            CoatingTypeSeeder::class,
             LineCategorySeeder::class,
             LineSeeder::class,
             WeightFrameSeeder::class,
