@@ -120,18 +120,27 @@ class StructureHelper
     static function groupLinesByCategories(array $lineOptions) : array {
         $categories = LineCategory::all();
         $linesByCategories = [];
+        $total = 0;
 
         foreach ($categories as $category) {
             $categoryTotal = 0;
+            $categoryLabels = [];
             foreach ($lineOptions as $lineOption) {
                 if ($lineOption->line->lineCategory->id == $category->id) {
                     $categoryTotal += $lineOption->total;
+                    array_push($categoryLabels, $lineOption->line->identifier);
                 }
             }
-            $category->total = $categoryTotal;
+            $category->total = round($categoryTotal, 2);
+            $category->labels = join(' | ', $categoryLabels);
             array_push($linesByCategories, $category);
+            $total += $category->total;
         }
-        return $linesByCategories;
+        $response = [
+            'lines' => $linesByCategories,
+            'total' => round($total, 2)
+        ];
+        return $response;
     }
     static function getLinesDataByStructure(Structure $structure)
     {

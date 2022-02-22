@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS new_images;
 DROP TABLE IF EXISTS new_cover_facade_types;
 DROP TABLE IF EXISTS new_tile_types;
 DROP TABLE IF EXISTS new_foundation_volumes;
-
+DROP TABLE IF EXISTS new_medias;
 
 config
 APP_NAME=Solmidas
