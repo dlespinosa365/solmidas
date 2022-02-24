@@ -121,6 +121,7 @@ class StructureHelper
         $categories = LineCategory::all();
         $linesByCategories = [];
         $total = 0;
+        $linesOption = [];
 
         foreach ($categories as $category) {
             $categoryTotal = 0;
@@ -130,6 +131,12 @@ class StructureHelper
                     $categoryTotal += $lineOption->total;
                     array_push($categoryLabels, $lineOption->line->identifier);
                 }
+                if ($lineOption->total > 0) {
+                    array_push($linesOption, [
+                        'line' => $lineOption->line,
+                        'lineOption' => $lineOption
+                    ]);
+                }
             }
             $category->total = round($categoryTotal, 2);
             $category->labels = join(' | ', $categoryLabels);
@@ -137,8 +144,9 @@ class StructureHelper
             $total += $category->total;
         }
         $response = [
-            'lines' => $linesByCategories,
-            'total' => round($total, 2)
+            'resume' => $linesByCategories,
+            'total' => round($total, 2),
+            'lines' => $linesOption
         ];
         return $response;
     }
