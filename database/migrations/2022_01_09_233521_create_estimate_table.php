@@ -18,7 +18,8 @@ class CreateEstimateTable extends Migration
             $table->id();
             $table->timestamps();
             $table->double('total')->default(0);
-            $table->integer('totalHours')->default(0);
+            $table->integer('totalHoursOfWork')->default(0);
+            $table->integer('totalHoursForMainStructures')->default(0);
             $table->foreignIdFor(Structure::class)->nullable()->unsigned();
         });
     }

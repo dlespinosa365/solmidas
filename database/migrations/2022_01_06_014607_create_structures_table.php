@@ -53,7 +53,6 @@ class CreateStructuresTable extends Migration
             $table->double('weightFrame')->default(0);
             $table->double('foundationVolume')->default(0);
             $table->double('countFrame')->default(0);
-            $table->integer('hoursOfWork')->default(0);
 
             //user relation
             $table->foreignIdFor(User::class)->nullable()->unsigned();

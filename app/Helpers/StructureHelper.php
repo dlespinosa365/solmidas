@@ -15,14 +15,16 @@ use App\Models\User;
 
 class StructureHelper
 {
-    static function validateStructureForAdmin(Request $request) : void {
+    static function validateStructureForAdmin(Request $request): void
+    {
         $request->validate([
             'title' => 'required',
             'description' => 'required'
         ]);
     }
 
-    static function validateStructure(Request $request) : void {
+    static function validateStructure(Request $request): void
+    {
         $request->validate([
             'withPlatibanda' => 'required|boolean',
             'distanceBetweenFrames' => 'required|integer|min:5|max:8',
@@ -55,13 +57,15 @@ class StructureHelper
         ]);
     }
 
-    static function getRequestDataByAdmin(Request $request, bool $isAdmin = false) {
+    static function getRequestDataByAdmin(Request $request, bool $isAdmin = false)
+    {
         if ($isAdmin) {
             $structureData = $request->only([
                 'title',
                 'description'
             ]);
-        } else {
+        }
+        else {
             $structureData = $request->only([
                 'withPlatibanda',
                 'distanceBetweenFrames',
@@ -104,12 +108,14 @@ class StructureHelper
 
     }
 
-    static function getStructureByRequest(Request $request) {
+    static function getStructureByRequest(Request $request)
+    {
         $user = Auth::user();
         if ($user != null && $user->isAdmin) {
             StructureHelper::validateStructureForAdmin($request);
             $structureData = StructureHelper::getRequestDataByAdmin($request, true);
-        } else {
+        }
+        else {
             StructureHelper::validateStructure($request);
             $structureData = StructureHelper::getRequestDataByAdmin($request, false);
         }
@@ -117,7 +123,8 @@ class StructureHelper
         return $structure;
     }
 
-    static function groupLinesByCategories(array $lineOptions) : array {
+    static function groupLinesByCategories(array $lineOptions): array
+    {
         $categories = LineCategory::all();
         $linesByCategories = [];
         $total = 0;
@@ -161,24 +168,26 @@ class StructureHelper
         foreach ($lines as $line) {
             $subtotal = $line->getAmount($structure);
             $lineOption = new LineOption();
-            $lineOption->total = $subtotal * $line->unitPrice;
-            $lineOption->subtotal = $subtotal;
+            $lineOption->total = CalculateFunctionsHelper::roundUp($subtotal * $line->unitPrice);
+            $lineOption->subtotal = CalculateFunctionsHelper::roundUp($subtotal);
             $lineOption->line_id = $line->id;
             $lineOption->line = $line;
             array_push($resultLines, $lineOption);
             $totalAmount = $totalAmount + $lineOption->total;
         }
+        $hoursOfWork = StructureHelper::calculateTotalHours($resultLines, $structure);
         return [
             'linesOptions' => $resultLines,
             'weightFrame' => $structure->weightFrame,
             'foundationVolume' => $structure->foundationVolume,
             'countFrame' => $structure->countFrame,
             'totalAmount' => $totalAmount,
-            'hoursOfWork' => StructureHelper::calculateTotalHours($resultLines, $structure)
+            'hoursOfWork' => $hoursOfWork
         ];
     }
 
-    static function calculateTotalHours($linesOption, Structure $structure) : int {
+    static function calculateTotalHours($linesOption, Structure $structure): array
+    {
         $totalWeigthMainStructure = 0;
         $totalWieghtSecondStructure = 0;
         $totalForCoverArea = 0;
@@ -198,71 +207,75 @@ class StructureHelper
                 $totalForFacadeClousure += $lineOption->subtotal;
             }
         }
-
+        $totalHourForMainStructures = ceil($totalWeigthMainStructure / 10000);
         if ($structure->requireMontage && !$structure->metalClosure) {
-            return ceil($totalWeigthMainStructure / 10000);
+            return [
+                'totalHour' => $totalHourForMainStructures,
+                'totalHourForMainStructures' => $totalHourForMainStructures
+            ];
         }
-        return ceil($totalWeigthMainStructure / 10000) + 
-               ceil($totalWieghtSecondStructure / 1500)  +
-               ceil($totalForCoverArea / 200) + 
-               ceil($totalForFacadeClousure / 150);
+        $totalHour = $totalHourForMainStructures +
+            ceil($totalWieghtSecondStructure / 1500) +
+            ceil($totalForCoverArea / 200) +
+            ceil($totalForFacadeClousure / 150);
+        return [
+            'totalHour' => $totalHour,
+            'totalHourForMainStructures' => $totalHourForMainStructures
+        ];
     }
 
-    static function createEstimateDataForStructure(Structure $structure) {
+    static function createEstimateDataForStructure(Structure $structure)
+    {
         $linesData = StructureHelper::getLinesDataByStructure($structure);
         $estimate = Estimate::create();
-        $estimate->total = $linesData['totalAmount'];
+        $estimate->total = CalculateFunctionsHelper::roundUp($linesData['totalAmount']);
         foreach ($linesData['linesOptions'] as $lineOption) {
             $lineOption->estimate_id = $estimate->id;
             $lineOption->save();
         }
         $estimate->structure_id = $structure->id;
+        $estimate->totalHoursOfWork = $linesData['hoursOfWork']['totalHour'];
+        $estimate->totalHoursForMainStructures = $linesData['hoursOfWork']['totalHourForMainStructures'];
         $estimate->update();
         return [
             'estimate' => $estimate,
             'weightFrame' => $linesData['weightFrame'],
             'foundationVolume' => $linesData['foundationVolume'],
-            'countFrame' => $linesData['countFrame'],
-            'hoursOfWork' => $linesData['hoursOfWork']
+            'countFrame' => $linesData['countFrame']
         ];
     }
 
     static function addFilesToStructure(Request $request, Structure $structure): bool
     {
-        $request->validate([
-            'files' => 'required',
-            'files.*' => 'mimes:jpg,jpeg,png,bmp,tiff,flv,mp4,m3u8,ts,3pg,mov,avi,wmv'
-            ]);
-     
-            if($request->hasfile('files'))
-             {
-                foreach($request->file('files') as $key => $file)
-                {
-                    $path = $file->store('public/medias');
-                    $name = $file->getClientOriginalName();
-                    $insert[$key]['name'] = $name;
-                    $insert[$key]['path'] = $path;
-                    $insert[$key]['structure_id'] = $structure->id;
-     
-                }
-                Media::insert($insert);
-                return true;
-             }
-             return false;
+        if ($request->hasfile('files')) {
+            foreach ($request->file('files') as $file) {
+                $path = $file->store('medias', 'medias');
+                $name = $file->getClientOriginalName();
+                $data = [
+                    'name' => $name,
+                    'path' => $path,
+                    'structure_id' => $structure->id
+                ];
+                Media::insert($data);
+            }
+            return true;
+        }
+        return false;
     }
 
-    static function getFullStructure(int $structureId, $userId = null) {
+    static function getFullStructure(int $structureId, $userId = null)
+    {
         if ($userId != null) {
             return Structure::where('id', $structureId)
-            ->where('user_id', $userId)
+                ->where('user_id', $userId)
+                ->with('estimate.linesOptions.line.lineCategory')
+                ->get()
+                ->first();
+        }
+        return Structure::where('id', $structureId)
             ->with('estimate.linesOptions.line.lineCategory')
             ->get()
             ->first();
-        }
-        return Structure::where('id', $structureId)
-        ->with('estimate.linesOptions.line.lineCategory')
-        ->get()
-        ->first();
     }
 
     static function generateCode(Structure $structure)
@@ -279,14 +292,16 @@ class StructureHelper
         $code .= strval($structure->columnHeight);
         $code .= sprintf("%'.03d\n", $structure->id);
         $code .= date('y');
-        return preg_replace( '/[\W]/', '', $code);
+        return preg_replace('/[\W]/', '', $code);
     }
 
-    static function removeEstimateAndLinesOptionsFromStructure(Structure $structure) {
-         return $structure->estimate->delete();   
+    static function removeEstimateAndLinesOptionsFromStructure(Structure $structure)
+    {
+        return $structure->estimate->delete();
     }
 
-    static function setAllDataInStructure(Structure $structure, $user) {
+    static function setAllDataInStructure(Structure $structure, $user)
+    {
         $structure->user_id = $user->id;
         $structure->save();
         $structure->code = StructureHelper::generateCode($structure);
@@ -294,7 +309,6 @@ class StructureHelper
         $structure->weightFrame = $estimateData['weightFrame'];
         $structure->foundationVolume = $estimateData['foundationVolume'];
         $structure->countFrame = $estimateData['countFrame'];
-        $structure->hoursOfWork = $estimateData['hoursOfWork'];
         $structure->update();
         return $structure;
     }

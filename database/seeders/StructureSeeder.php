@@ -28,6 +28,10 @@ class StructureSeeder extends Seeder
                         'path' => 'medias/1.jpg'
                     ],
                     [
+                        'name' => 'video1.mp4',
+                        'path' => 'medias/video1.mp4'
+                    ],
+                    [
                         'name' => '12.jpg',
                         'path' => 'medias/12.jpg'
                     ],

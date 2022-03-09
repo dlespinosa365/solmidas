@@ -29,7 +29,9 @@ class Estimate extends Model
      * @var array
      */
     protected $attributes = [
-        'total' => 0
+        'total' => 0,
+        'totalHoursOfWork' => 0,
+        'totalHoursForMainStructures' => 0
     ];
 
 

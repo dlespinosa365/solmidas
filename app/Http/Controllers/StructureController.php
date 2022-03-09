@@ -44,11 +44,13 @@ class StructureController extends Controller
         $user = Auth::user();
         $structure = StructureHelper::getStructureByRequest($request);
         try {
-            $structure = StructureHelper::setAllDataInStructure($structure, $user);
             if ($user->isAdmin) {
                 $structure->isPublic = true;
-                $this->addFilesToStructure($request, $structure);
+                $structure->save();
+                StructureHelper::addFilesToStructure($request, $structure);
+                return ResponseHelper::sendSuccess(Structure::where('id', $structure->id)->with('medias')->first(), 200);
             }
+            $structure = StructureHelper::setAllDataInStructure($structure, $user);
             $structure = StructureHelper::getFullStructure($structure->id);
             return ResponseHelper::sendSuccess($structure, 200);
         }
@@ -159,7 +161,7 @@ class StructureController extends Controller
                 $structure->medias()->delete();
                 if ($user->isAdmin) {
                     $structure->isPublic = true;
-                    $this->addFilesToStructure($request, $structure);
+                    StructureHelper::addFilesToStructure($request, $structure);
                 }
                 $structure->update();
                 $structure = StructureHelper::getFullStructure($structure->id);
@@ -184,7 +186,7 @@ class StructureController extends Controller
         $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
         if ($structure) {
             $structureFull = StructureHelper::getFullStructure($structure->id, $user->id);
-            $data = ['structure' => $structureFull];
+            $data = ['structure' => $structureFull, 'user' => $user];
             $pdf = PDF::loadView('pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
             //dd($structure->code. '.pdf');
             return $pdf->download('e.pdf');
