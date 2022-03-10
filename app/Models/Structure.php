@@ -114,6 +114,11 @@ class Structure extends Model
         'land_category_id' => null
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    } 
+
 
     public function rigidFrame()
     {

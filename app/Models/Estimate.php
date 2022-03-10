@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\LineOption;
 use App\Models\Structure;
 
+
 class Estimate extends Model
 {
     use HasFactory;
@@ -33,6 +34,8 @@ class Estimate extends Model
         'totalHoursOfWork' => 0,
         'totalHoursForMainStructures' => 0
     ];
+
+    
 
 
     public function linesOptions()

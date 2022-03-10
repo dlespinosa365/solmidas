@@ -19,6 +19,10 @@ class StructureController extends Controller
     public function index()
     {
         $user = Auth::user();
+        if ($user->isAdmin) {
+            $structures = Structure::orderBy('created_at', 'desc')->with('user')->get();
+            return ResponseHelper::sendSuccess($structures, 200);
+        }
         $structures = Structure::where('user_id', $user->id)->get();
         return ResponseHelper::sendSuccess($structures, 200);
     }
