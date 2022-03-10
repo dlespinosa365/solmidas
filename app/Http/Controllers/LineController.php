@@ -16,7 +16,7 @@ class LineController extends Controller
      */
     public function index()
     {
-        $lines = Line::all();
+        $lines = Line::with('lineCategory')->get();
         return ResponseHelper::sendSuccess($lines, 200);
     }
 

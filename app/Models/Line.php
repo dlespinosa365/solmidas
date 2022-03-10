@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Structure;
 use App\Models\LineCategory;
+use App\Models\LineOption;
 use App\Helpers\LogHelper;
 use App\Helpers\CalculateFunctionsHelper;
 
@@ -61,8 +62,8 @@ class Line extends Model
         return $this->belongsTo(LineCategory::class);
     } 
 
-    public function line()
+    public function lineOption()
     {
-        return $this->hasOne(Line::class);
+        return $this->hasOne(LineOption::class);
     }
 }

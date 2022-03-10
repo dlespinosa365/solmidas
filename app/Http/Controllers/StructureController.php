@@ -186,10 +186,12 @@ class StructureController extends Controller
         $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
         if ($structure) {
             $structureFull = StructureHelper::getFullStructure($structure->id, $user->id);
-            $data = ['structure' => $structureFull, 'user' => $user];
+            $data = [
+                'structure' => $structureFull, 
+                'user' => $user
+            ];
             $pdf = PDF::loadView('pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
-            //dd($structure->code. '.pdf');
-            return $pdf->download('e.pdf');
+            return $pdf->download($structure->code.'.pdf');
         }
         return ResponseHelper::sendError('Configuration not found.', 400);
     }

@@ -1,7 +1,5 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"
-    style="width:100%;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office" style="width:100%;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +7,7 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>New email template 2022-03-05</title>
+    <title>{{$structure->code}}</title>
     <!--[if (mso 16)]>
     <style type="text/css">
     a {text-decoration: none;}
@@ -31,6 +29,30 @@
         .mtop {
             margin-top: 20px;
         }
+        .row-line-brake {
+            padding-top: 50px;
+        }
+        table.presupuesto td {
+            border: solid 1px #ccc;
+            Margin:0;
+            -webkit-text-size-adjust:none;
+            -ms-text-size-adjust:none;
+            mso-line-height-rule:exactly;
+            font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;
+            line-height:27px;
+            color:#666666;
+            font-size:17px;
+        }
+        table.presupuesto tr {
+            page-break-inside: avoid !important;
+        }
+        table.presupuesto tr.header {
+            background-color: #ccc
+            color:#666666;
+            font-size:18px;
+            font-weight:bold;
+        }
+
         .page-break {
             page-break-after: always;
         }
@@ -307,71 +329,53 @@
                 display: inline-block !important
             }
         }
+
     </style>
 </head>
 
-<body
-    style="width:100%;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
+<body style="width:100%;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;padding:0;Margin:0">
     <div class="es-wrapper-color" style="background-color:#F4F4F4">
         <!--[if gte mso 9]>
 			<v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">
 				<v:fill type="tile" color="#f4f4f4"></v:fill>
 			</v:background>
 		<![endif]-->
-        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0"
-            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top">
+        <table class="es-wrapper" width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;padding:0;Margin:0;width:100%;height:100%;background-repeat:repeat;background-position:center top">
             <tr style="border-collapse:collapse">
                 <td valign="top" style="padding:0;Margin:0">
-                    <table class="es-header" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:#FFA73B;background-repeat:repeat;background-position:center top">
+                    <table class="es-header" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:#FFA73B;background-repeat:repeat;background-position:center top">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-header-body" cellspacing="0" cellpadding="0" align="center"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
+                                <table class="es-header-body" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px">
                                     <tr style="border-collapse:collapse">
-                                        <td align="left"
-                                            style="Margin:0;padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px">
+                                        <td align="left" style="Margin:0;padding-bottom:10px;padding-left:10px;padding-right:10px;padding-top:20px">
                                         </td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                     </table>
-                    <table class="es-content" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td style="padding:0;Margin:0;background-color:#ffa73b" bgcolor="#ffa73b" align="center">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#ffffff;border-radius:4px"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#ffffff;border-radius:4px" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                    <h1
-                                                                        style="Margin:0;line-height:58px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:48px;font-style:normal;font-weight:normal;color:#111111">
-                                                                        Solmidas</h1>
+                                                                <td align="center" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h1 style="Margin:0;line-height:58px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:38px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ __('Presupuesto :code', ['code' => $structure->code]) }}</h1>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td bgcolor="#ffffff" align="center"
-                                                                    style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;font-size:0">
-                                                                    <table width="100%" height="100%" cellspacing="0"
-                                                                        cellpadding="0" border="0"
-                                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                <td bgcolor="#ffffff" align="center" style="Margin:0;padding-top:5px;padding-bottom:5px;padding-left:20px;padding-right:20px;font-size:0">
+                                                                    <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                                         <tr style="border-collapse:collapse">
-                                                                            <td
-                                                                                style="padding:0;Margin:0;border-bottom:1px solid #ffffff;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px">
+                                                                            <td style="padding:0;Margin:0;border-bottom:1px solid #ffffff;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px">
                                                                             </td>
                                                                         </tr>
                                                                     </table>
@@ -388,64 +392,76 @@
                         </tr>
                     </table>
 
-                    <!-- datos iniciales-->
-                    <table class="es-content" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <!-- pie de pagina-->
+                    <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#ffecd1;border-radius:4px" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffecd1">
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Nombre de la obra :code', ['code' => $structure->code]) }}</p>
+                                                                <td esdev-links-color="#ffa73b" align="center" style="padding-top:20px;Margin:0;padding-bottom:30px;padding-left:30px;padding-right:30px">
+                                                                    <a target="_blank" href="https://solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
+                                                                    {{ __('Estamos listos para comenzar') }}</a> |
+                                                                    <a target="_blank" href="https://solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
+                                                                    +351 915 572 385 </a> | 
+                                                                    <a target="_blank" href="mailto:solmidas@solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
+                                                                    solmidas@solmidas.com</a>
                                                                 </td>
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- datos iniciales-->
+                    <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Nombre de la obra: :code', ['code' => $structure->code]) }}</p>
+                                                                </td>
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
                                                                         {{ __('Telefono: :telefono', ['telefono' => $user->phone]) }}</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
                                                                         {{ __('Direccion: :direccion', ['direccion' => $structure->council->name]) }}</p>
                                                                 </td>
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Email :email', ['telefono' => $user->email]) }}</p>
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Email: :email', ['email' => $user->email]) }}</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
                                                                         {{ __('Dimensiones:') }}</p>
                                                                 </td>
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    <p
-                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
                                                                         {{ __('Ancho: :ancho m / Longitud: :longitud m / Altura: :altura m', ['ancho' => $structure->distanceBetweenColumns, 'longitud' => $structure->shipLength, 'altura' => $structure->columnHeight]) }}</p>
                                                                 </td>
                                                             </tr>
@@ -461,35 +477,24 @@
                     </table>
 
                     <!-- notas previas-->
-                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
                                                                         {{ __('Notas previas')}}</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
                                                                         {{ __('Esta propuesta ha sido elaborada teniendo en cuenta la norma de fabricación EN1090-2 para la clase de ejecución EXC2.') }}
                                                                     </p>
@@ -518,95 +523,73 @@
 
                     <!-- MOVIMIENTO DE TIERRA Y ZAPATAS-->
                     @if ($structure->shoes)
-                        <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
-                            <tr style="border-collapse:collapse">
-                                <td align="center" style="padding:0;Margin:0">
-                                    <table class="es-content-body"
-                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                        cellspacing="0" cellpadding="0" align="center">
-                                        <tr style="border-collapse:collapse">
-                                            <td align="left" style="padding:0;Margin:0">
-                                                <table width="100%" cellspacing="0" cellpadding="0"
-                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                    <tr style="border-collapse:collapse">
-                                                        <td valign="top" align="center"
-                                                            style="padding:0;Margin:0;width:600px">
-                                                            <table
-                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                                width="100%" cellspacing="0" cellpadding="0"
-                                                                bgcolor="#ffffff">
-                                                                <tr style="border-collapse:collapse">
-                                                                    <td align="left"
-                                                                        style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                        <h2
-                                                                            style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
-                                                                            {{ __('Movimiento de tierra y zapatas')}}</h2>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr style="border-collapse:collapse">
-                                                                    <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                        style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('En ausencia del estudio geotécnico para la obra, se asume una tensión del suelo igual a 200KPa, las cimentaciones serán del tipo superficiales conectadas con vigas zapatas.') }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('El hormigón concebido para estos trabajos será del tipo C25/30 S2.') }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Los medios y equipos necesarios serán utilizados de acuerdo con la tipología del terreno.') }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('En las zapatas serán aplicados y nivelados los pernos de anclajes que fijarán las columnas.') }}
-                                                                        </p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>                 
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ __('Movimiento de tierra y zapatas')}}</h2>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('En ausencia del estudio geotécnico para la obra, se asume una tensión del suelo igual a 200KPa, las cimentaciones serán del tipo superficiales conectadas con vigas zapatas.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('El hormigón concebido para estos trabajos será del tipo C25/30 S2.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Los medios y equipos necesarios serán utilizados de acuerdo con la tipología del terreno.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('En las zapatas serán aplicados y nivelados los pernos de anclajes que fijarán las columnas.') }}
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                     @endif
 
                     <!-- Estructuras principales-->
-                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
                                                                         {{ __('Estructuras principales')}}</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                    
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
                                                                         {{ __('El ensamblaje de todas las partes que componen las estructuras será mediante soldaduras semiautomáticas con alambre ER 70S-6 de Ø 1.2-1.6mm bajo gases protectores, ¨Gas Metal arc welding¨ (GMAW).') }}
                                                                     </p>
@@ -619,15 +602,15 @@
                                                                         {{ __('Tratamiento superficial: decapado abrasivo al grado Sa 2 ½ según la norma ISO8501-1: 2007.') }}
                                                                     </p>
                                                                     @if($structure->anticorrosiveTreatment)
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Tratamiento anticorrosivo: pintado con aplicación de primario de dos componentes epoxi rico en zinc, aplicación de intermedio de dos componentes epoxi y acabado RAL universal 7038.') }}
-                                                                        </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Tratamiento anticorrosivo: pintado con aplicación de primario de dos componentes epoxi rico en zinc, aplicación de intermedio de dos componentes epoxi y acabado RAL universal 7038.') }}
+                                                                    </p>
                                                                     @else
-                                                                         <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Tratamiento anticorrosivo: galvanizado por inmersión en caliente según la norma vigente ISO 1461.') }}
-                                                                        </p>   
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Tratamiento anticorrosivo: galvanizado por inmersión en caliente según la norma vigente ISO 1461.') }}
+                                                                    </p>
                                                                     @endif
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
@@ -657,55 +640,44 @@
                     <div class="page-break"></div>
 
                     <!-- Estructuras secundarias-->
-                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
                                                                         {{ __('Estructuras secundarias')}}</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
                                                                     @if($structure->metalClosure)
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Correas de fachadas y cubierta, elementos secundarios de fijación todo en perfiles galvanizados conformados en frio de acero clase S 320GD.') }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Todos los elementos estructurales serán fijados por tornillos de alta resistencia de acuerdo con la norma DIN 933 ZINC, clase 8.8.') }}
-                                                                        </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Correas de fachadas y cubierta, elementos secundarios de fijación todo en perfiles galvanizados conformados en frio de acero clase S 320GD.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Todos los elementos estructurales serán fijados por tornillos de alta resistencia de acuerdo con la norma DIN 933 ZINC, clase 8.8.') }}
+                                                                    </p>
                                                                     @endif
                                                                     @if($structure->isFacadeTejasSimpleType())
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Canales simples conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, Ø 140mm para descarga de aguas pluviales.') }}
-                                                                        </p>
-                                                                    @else 
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Canales simples con aislamiento conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, Ø 140mm para descarga de aguas pluviales') }}
-                                                                        </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Canales simples conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, Ø 140mm para descarga de aguas pluviales.') }}
+                                                                    </p>
+                                                                    @else
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Canales simples con aislamiento conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, Ø 140mm para descarga de aguas pluviales') }}
+                                                                    </p>
                                                                     @endif
                                                                 </td>
                                                             </tr>
@@ -722,162 +694,140 @@
 
                     <!-- cierre metalico -->
                     @if ($structure->metalClosure)
-                        <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
-                            <tr style="border-collapse:collapse">
-                                <td align="center" style="padding:0;Margin:0">
-                                    <table class="es-content-body"
-                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                        cellspacing="0" cellpadding="0" align="center">
-                                        <tr style="border-collapse:collapse">
-                                            <td align="left" style="padding:0;Margin:0">
-                                                <table width="100%" cellspacing="0" cellpadding="0"
-                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
-                                                    <tr style="border-collapse:collapse">
-                                                        <td valign="top" align="center"
-                                                            style="padding:0;Margin:0;width:600px">
-                                                            <table
-                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                                width="100%" cellspacing="0" cellpadding="0"
-                                                                bgcolor="#ffffff">
-                                                                <tr style="border-collapse:collapse">
-                                                                    <td align="left"
-                                                                        style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                        <h2
-                                                                            style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
-                                                                            {{ __('Cierre Metálico')}}</h2>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr style="border-collapse:collapse">
-                                                                    <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                        style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                            @if ($structure->isCoverSandwichPanelType())
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en paneles sandwich en cubierta, :xx mm de espesor, color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->coverDensity]) }}
-                                                                                </p>
-                                                                            @endif
-                                                                            @if ($structure->isCoverLanaDeRocaPanelType())
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en paneles de lana de roca en cubierta, :xx mm de espesor color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->coverDensity]) }}
-                                                                                </p>
-                                                                            @endif
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ __('Cierre Metálico')}}</h2>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    @if ($structure->isCoverSandwichPanelType())
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en paneles sandwich en cubierta, :xx mm de espesor, color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->coverDensity]) }}
+                                                                    </p>
+                                                                    @endif
+                                                                    @if ($structure->isCoverLanaDeRocaPanelType())
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en paneles de lana de roca en cubierta, :xx mm de espesor color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->coverDensity]) }}
+                                                                    </p>
+                                                                    @endif
 
-                                                                            @if ($structure->isCoverTejasSimpleType())
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en tejas simples en cubierta, color RAL universal sujeto a la disponibilidad de cada fabricante.') }}
-                                                                                </p>
-                                                                            @endif
+                                                                    @if ($structure->isCoverTejasSimpleType())
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en tejas simples en cubierta, color RAL universal sujeto a la disponibilidad de cada fabricante.') }}
+                                                                    </p>
+                                                                    @endif
 
-                                                                            @if ($structure->isFacadeSandwichPanelType())
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en paneles sandwich en fachada, :xx mm de espesor, color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->facadeDensity]) }}
-                                                                                </p>
-                                                                            @endif
-                                                                            @if ($structure->isFacadeLanaDeRocaPanelType())
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en paneles de lana de roca en fachada, :xx mm de espesor color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->facadeDensity]) }}
-                                                                                </p>
-                                                                            @endif
+                                                                    @if ($structure->isFacadeSandwichPanelType())
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en paneles sandwich en fachada, :xx mm de espesor, color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->facadeDensity]) }}
+                                                                    </p>
+                                                                    @endif
+                                                                    @if ($structure->isFacadeLanaDeRocaPanelType())
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en paneles de lana de roca en fachada, :xx mm de espesor color RAL universal sujeto a la disponibilidad de cada fabricante', ['xx' => $structure->facadeDensity]) }}
+                                                                    </p>
+                                                                    @endif
 
-                                                                            @if ($structure->isFacadeTejasSimpleType())
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en tejas simples en fachada, color RAL universal sujeto a la disponibilidad de cada fabricante.') }}
-                                                                                </p>
-                                                                            @endif
-                                                                            @if ($structure->withPlatibanda)
-                                                                                <br>
-                                                                                <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                    {{ __('Revestimiento en tejas simples en fachada, color RAL universal sujeto a la disponibilidad de cada fabricante.') }}
-                                                                                </p>
-                                                                            @endif
-                                                                            <br>
-                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                {{ __('Se incluyen todos los remates de fachadas y de cubierta en chapa lacada del mismo color del cierre metálico.') }}
-                                                                            </p>
-                                                                            <br>
-                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                {{ __('Los tornillos de fijación, serán del tipo DIN7504-K & DIN7504P(O)-H.') }}
-                                                                            </p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                                                                    @if ($structure->isFacadeTejasSimpleType())
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en tejas simples en fachada, color RAL universal sujeto a la disponibilidad de cada fabricante.') }}
+                                                                    </p>
+                                                                    @endif
+                                                                    @if ($structure->withPlatibanda)
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Revestimiento en tejas simples en fachada, color RAL universal sujeto a la disponibilidad de cada fabricante.') }}
+                                                                    </p>
+                                                                    @endif
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Se incluyen todos los remates de fachadas y de cubierta en chapa lacada del mismo color del cierre metálico.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Los tornillos de fijación, serán del tipo DIN7504-K & DIN7504P(O)-H.') }}
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                     @endif
 
-                    
+
 
                     <div class="page-break"></div>
 
 
-                     <!-- accesorios -->
-                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <!-- accesorios -->
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
                                                                         {{ __('Accesorios')}}</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                        @if ($structure->sectionedDoorsLessThan16)
-                                                                            <br>
-                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                {{ __('Portón seccionado de (:A x :B)m de estructura tubular revestido de panel sándwich, incluyendo guías de deslizamiento, soporte y accesorios de fijación todo en acero galvanizado, resortes de acero tratado templado, funcionamiento manual o automático opcional con operador eléctrico, cerradura de accionamiento y comando por botonera fija.', ['A' => $structure->sectionedDoorsLessThan16width, 'B' => $structure->sectionedDoorsLessThan16Height]) }}
-                                                                            </p>
-                                                                        @endif
-                                                                        @if ($structure->sectionedDoorsMajorThan16)
-                                                                            <br>
-                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                {{ __('Portón seccionado de (:A x :B)m de estructura tubular revestido de panel sándwich, incluyendo guías de deslizamiento, soporte y accesorios de fijación todo en acero galvanizado, resortes de acero tratado templado, funcionamiento manual o automático opcional con operador eléctrico, cerradura de accionamiento y comando por botonera fija.', ['A' => $structure->sectionedDoorsMajorThan16width, 'B' => $structure->sectionedDoorsMajorThan16Height]) }}
-                                                                            </p>
-                                                                        @endif
-                                                                        @if ($structure->emergencyDoors)
-                                                                            <br>
-                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                {{ __('Puertas de emergencia simple de una hoja de (:A x :B )m, estructura tubular y chapas simples revestidas y pintada en ambas caras, incluyendo accesorios de fijación y barra antipánico.', ['A' => $structure->emergencyDoorswidth, 'B' => $structure->emergencyDoorsHeight]) }}
-                                                                            </p>
-                                                                        @endif
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    @if ($structure->sectionedDoorsLessThan16)
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Portón seccionado de (:A x :B)m de estructura tubular revestido de panel sándwich, incluyendo guías de deslizamiento, soporte y accesorios de fijación todo en acero galvanizado, resortes de acero tratado templado, funcionamiento manual o automático opcional con operador eléctrico, cerradura de accionamiento y comando por botonera fija.', ['A' => $structure->sectionedDoorsLessThan16width, 'B' => $structure->sectionedDoorsLessThan16Height]) }}
+                                                                    </p>
+                                                                    @endif
+                                                                    @if ($structure->sectionedDoorsMajorThan16)
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Portón seccionado de (:A x :B)m de estructura tubular revestido de panel sándwich, incluyendo guías de deslizamiento, soporte y accesorios de fijación todo en acero galvanizado, resortes de acero tratado templado, funcionamiento manual o automático opcional con operador eléctrico, cerradura de accionamiento y comando por botonera fija.', ['A' => $structure->sectionedDoorsMajorThan16width, 'B' => $structure->sectionedDoorsMajorThan16Height]) }}
+                                                                    </p>
+                                                                    @endif
+                                                                    @if ($structure->emergencyDoors)
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Puertas de emergencia simple de una hoja de (:A x :B )m, estructura tubular y chapas simples revestidas y pintada en ambas caras, incluyendo accesorios de fijación y barra antipánico.', ['A' => $structure->emergencyDoorswidth, 'B' => $structure->emergencyDoorsHeight]) }}
+                                                                    </p>
+                                                                    @endif
 
-                                                                        @if ($structure->serviceDoors)
-                                                                            <br>
-                                                                            <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                                {{ __('Puertas de servicio simple de una hoja de (:A x :B )m, estructura tubular y chapas simples revestidas y pintada en ambas caras, incluyendo accesorios de fijación.', ['A' => $structure->serviceDoorswidth, 'B' => $structure->serviceDoorsHeight]) }}
-                                                                            </p>
-                                                                        @endif
+                                                                    @if ($structure->serviceDoors)
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Puertas de servicio simple de una hoja de (:A x :B )m, estructura tubular y chapas simples revestidas y pintada en ambas caras, incluyendo accesorios de fijación.', ['A' => $structure->serviceDoorswidth, 'B' => $structure->serviceDoorsHeight]) }}
+                                                                    </p>
+                                                                    @endif
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -891,57 +841,199 @@
                         </tr>
                     </table>
 
+                    <div class="page-break"></div>
 
                     <!-- condiciones generales -->
-                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffffff">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="left"
-                                                                    style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
-                                                                    <h2
-                                                                        style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
                                                                         {{ __('Condiciones generales')}}</h2>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left"
-                                                                    style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('El plazo de ejecución e inicio de la obra se acordarán en el momento de la adjudicación y en función de sus necesidades') }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('En condiciones ideales proponemos el montaje de estructuras metálicas principales y secundarias incluyendo cierre de cubierta, fachadas y colocación de remates en :XX día(s) útiles.', ['XX' => ceil($structure->estimate->totalHoursOfWork / 8)  + 1]) }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('En condiciones ideales proponemos el montaje de estructuras metálicas principales en :XX día(s) útiles.', ['XX' => ceil($structure->estimate->totalHoursForMainStructures / 8)  + 1]) }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('Valor de la propuesta sin IVA: € :total', ['total' => $structure->estimate->total ]) }}
-                                                                        </p>
-                                                                        <br>
-                                                                        <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                            {{ __('El IVA se agrega al valor anterior.') }}
-                                                                        </p>
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('El plazo de ejecución e inicio de la obra se acordarán en el momento de la adjudicación y en función de sus necesidades') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('En condiciones ideales proponemos el montaje de estructuras metálicas principales y secundarias incluyendo cierre de cubierta, fachadas y colocación de remates en :XX día(s) útiles.', ['XX' => ceil($structure->estimate->totalHoursOfWork / 8)  + 1]) }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('En condiciones ideales proponemos el montaje de estructuras metálicas principales en :XX día(s) útiles.', ['XX' => ceil($structure->estimate->totalHoursForMainStructures / 8)  + 1]) }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Valor de la propuesta sin IVA: € :total', ['total' => $structure->estimate->total ]) }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('El IVA se agrega al valor anterior.') }}
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                     <div class="page-break"></div>
+
+                    <!-- tabla de presupuesto -->
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%; padding-bottom: 20px">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ __('Tabla resumen de presupuesto')}}</h2>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <table border="0" cellspacing="0" cellpadding="0" class="presupuesto">
+                                                                        <tr class="header">
+                                                                            <td collspan="6" style="padding-left:5px">
+                                                                                {{ __('Actividades Descripción')}}
+                                                                            </td>
+                                                                            <td collspan="2" align="center">{{ __('Cant.')}}</td>
+                                                                            <td collspan="2" align="center">{{ __('Precio de venta')}}</td>
+                                                                            <td collspan="2" align="center">{{ __('Precio de venta total')}}</td>
+                                                                        </tr>
+                                                                        @foreach ($structure->estimate->linesOptions as $lineOption)
+                                                                            @if ($loop->index != 0 && $loop->index % 7 == 0) 
+                                                                                <div class="page-break"></div>
+                                                                                <div style="height: 30px"></div>
+                                                                            @endif
+                                                                            @if ($lineOption->total > 0)
+                                                                                <tr>
+                                                                                    <td collspan="6" style="padding-left:5px">{{ $lineOption->line()->first()->description }}</td>
+                                                                                    <td align="center">{{ $lineOption->subtotal }} {{ $lineOption->line()->first()->unit}}</td>
+                                                                                    <td align="center" collspan="2">{{ $lineOption->line()->first()->unitPrice }} €</td>
+                                                                                    <td align="center" collspan="2">{{ $lineOption->total }} €</td>
+                                                                                </tr>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="page-break"></div>
+                    
+                    <!-- CONDICIONES DE PAGO SUJETO A NEGOCIACIÓN -->
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ __('Condiciones de pago sujeto a negociación')}}</h2>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('15% en acto de la adjudicación.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('35% al inicio del montaje de la estructura metálica.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('20% al inicio del montaje de la cubierta.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('10% al final de los trabajos.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Vencimiento de las facturas a los 7 días después de la fecha de emisión.') }}
+                                                                    </p>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- OBSERVACIONES -->
+                     <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                        <tr style="border-collapse:collapse">
+                            <td align="center" style="padding:0;Margin:0">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
+                                    <tr style="border-collapse:collapse">
+                                        <td align="left" style="padding:0;Margin:0">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                <tr style="border-collapse:collapse">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;border-radius:4px;background-color:#ffffff" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                                                            <tr style="border-collapse:collapse">
+                                                                <td align="left" style="Margin:0;padding-bottom:5px;padding-left:30px;padding-right:30px;padding-top:35px">
+                                                                    <h2 style="Margin:0;line-height:38px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:28px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ __('Observaciones')}}</h2>
+                                                                </td>
+                                                            </tr>
+                                                            <tr style="border-collapse:collapse">
+                                                                <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Será responsabilidad del cliente el suministro de agua y energía eléctrica, preparación del terreno para el comienzo de la obra, así como el acceso a la misma con una buena circulación para las máquinas y vehículos.') }}
+                                                                    </p>
+                                                                    <br>
+                                                                    <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
+                                                                        {{ __('Quedan excluidos de este presupuesto otros trabajos o suministros que no hayan sido mencionados.') }}
+                                                                    </p>
                                                                 </td>
                                                             </tr>
                                                         </table>
@@ -956,40 +1048,34 @@
                     </table>
 
 
-
                     <!-- pie de pagina-->
-                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center"
-                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                    <table class="es-content mtop" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
                         <tr style="border-collapse:collapse">
                             <td align="center" style="padding:0;Margin:0">
-                                <table class="es-content-body"
-                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px"
-                                    cellspacing="0" cellpadding="0" align="center">
+                                <table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:600px" cellspacing="0" cellpadding="0" align="center">
                                     <tr style="border-collapse:collapse">
                                         <td align="left" style="padding:0;Margin:0">
-                                            <table width="100%" cellspacing="0" cellpadding="0"
-                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                            <table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                                                 <tr style="border-collapse:collapse">
-                                                    <td valign="top" align="center"
-                                                        style="padding:0;Margin:0;width:600px">
-                                                        <table
-                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#ffecd1;border-radius:4px"
-                                                            width="100%" cellspacing="0" cellpadding="0"
-                                                            bgcolor="#ffecd1">
+                                                    <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
+                                                        <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:separate;border-spacing:0px;background-color:#ffecd1;border-radius:4px" width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffecd1">
                                                             <tr style="border-collapse:collapse">
-                                                                <td align="center"
-                                                                    style="padding:0;Margin:0;padding-top:30px;padding-left:30px;padding-right:30px">
-                                                                    <h3
-                                                                        style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#111111">
-                                                                        Need more help?</h3>
+                                                                <td align="center" style="padding:0;Margin:0;padding-top:30px;padding-left:30px;padding-right:30px">
+                                                                    <h3 style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#111111">
+                                                                        {{ _('Necesitas un poco de ayuda?')}}</h3>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
-                                                                <td esdev-links-color="#ffa73b" align="center"
-                                                                    style="padding:0;Margin:0;padding-bottom:30px;padding-left:30px;padding-right:30px">
-                                                                    <a target="_blank" href="https://viewstripo.email/"
-                                                                        style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">We’re
-                                                                        here, ready to talk</a></td>
+                                                                <td esdev-links-color="#ffa73b" align="center" style="padding:0;Margin:0;padding-bottom:30px;padding-left:30px;padding-right:30px">
+                                                                    <a target="_blank" href="https://solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
+                                                                    {{ _('Estamos listos para hablar')}}</a> |
+                                                                    <a target="_blank" href="https://solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
+                                                                    +351 915 572 385 </a> | 
+                                                                    <a target="_blank" href="mailto:solmidas@solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
+                                                                    solmidas@solmidas.com</a>
+                                                                        
+                                                                </td>
+
                                                             </tr>
                                                         </table>
                                                     </td>
