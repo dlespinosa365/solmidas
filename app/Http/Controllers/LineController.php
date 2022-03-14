@@ -50,7 +50,6 @@ class LineController extends Controller
             'constans' => 'required|json',
             'identifier' => 'required|string'
         ]);
-
         $line = Line::create([
             'number' => $fields['number'],
             'order' => $fields['order'],
@@ -75,8 +74,7 @@ class LineController extends Controller
     {
         $line = Line::find($id);
         if ($line == null) {
-            $response = 'Linea no encontrada';
-            ResponseHelper::sendError($response, 404);
+            ResponseHelper::sendError('Line not found.', 404);
         }
         return ResponseHelper::sendSuccess($line, 200);
     }
@@ -91,8 +89,7 @@ class LineController extends Controller
     {
         $line = Line::find($id);
         if ($line == null) {
-            $response = 'Linea no encontrada';
-            ResponseHelper::sendError($response, 404);
+            ResponseHelper::sendError('Line not found.', 404);
         }
         $line->lineCategories = LineCategory::all();
         return ResponseHelper::sendSuccess($line, 200);
@@ -131,6 +128,7 @@ class LineController extends Controller
             'constans' => $fields['constans'],
             'identifier' => $fields['identifier']
         ]);
+        $line = Line::where('id', $id)->with('lineCategory')->get();
         return ResponseHelper::sendSuccess($line, 200);
     }
 
@@ -144,8 +142,7 @@ class LineController extends Controller
     {
         $line = Line::find($id);
         if ($line == null) {
-            $response = 'Linea no encontrada';
-            ResponseHelper::sendError($response, 404);
+            ResponseHelper::sendError('Line not found.', 404);
         }
         $line->delete();
         return ResponseHelper::sendSuccess($line, 200);

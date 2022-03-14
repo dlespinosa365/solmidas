@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Schema\Blueprint;
+use App\Helpers\LocaleHelper;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blueprint::macro('translatable', function ($fieldName) {
+            $locales = LocaleHelper::getLocales();
+            foreach ($locales as $locale) {
+                $this->longText($fieldName.'_' .$locale)->nullable();
+            }
+        });
     }
 }

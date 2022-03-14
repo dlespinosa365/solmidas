@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Helpers\LocaleHelper;
 
 class SetLocale
 {
@@ -18,7 +19,8 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        if ($request->header('Accept-Language') && in_array($request->header('Accept-Language'), ['en', 'es', 'pt']))
+        $availableLocales = LocaleHelper::getLocales();
+        if ($request->header('Accept-Language') && in_array($request->header('Accept-Language'), $availableLocales))
             App::setLocale($request->header('Accept-Language'));
         return $next($request);
     }

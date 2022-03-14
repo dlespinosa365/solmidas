@@ -8,6 +8,7 @@ use App\Helpers\ResponseHelper;
 use Illuminate\Support\Facades\Auth;
 use App\Helpers\StructureHelper;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
+use Mail;
 
 class StructureController extends Controller
 {
@@ -20,10 +21,10 @@ class StructureController extends Controller
     {
         $user = Auth::user();
         if ($user->isAdmin) {
-            $structures = Structure::orderBy('created_at', 'desc')->with('user')->get();
+            $structures = Structure::orderBy('created_at', 'desc')->with('user', 'medias')->get();
             return ResponseHelper::sendSuccess($structures, 200);
         }
-        $structures = Structure::where('user_id', $user->id)->get();
+        $structures = Structure::where('user_id', $user->id)->with('user', 'medias')->get();
         return ResponseHelper::sendSuccess($structures, 200);
     }
 
@@ -56,6 +57,7 @@ class StructureController extends Controller
             }
             $structure = StructureHelper::setAllDataInStructure($structure, $user);
             $structure = StructureHelper::getFullStructure($structure->id);
+            $this->sendNotificationMail($structure);
             return ResponseHelper::sendSuccess($structure, 200);
         }
         catch (\Throwable $th) {
@@ -198,6 +200,20 @@ class StructureController extends Controller
             return $pdf->download($structure->code.'.pdf');
         }
         return ResponseHelper::sendError('Configuration not found.', 400);
+    }
+
+    public function sendNotificationMail(Structure $structure) {
+        $user = Auth::user();
+        $data = [
+            'structure' =>$structure, 
+            'user' => $user
+        ];
+        $pdf = PDF::loadView('pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
+        Mail::send('structure', ['$data' => $data], function ($m) use ($pdf, $structure) {
+            $m->from('solmidas@solmidas.com', 'Solmidas');
+            $m->to('solmidas@solmidas.com', 'Solmidas')->subject('Nueva configuración creada!');
+            $m->attachData($pdf->output(), $structure->code.'.pdf');
+        });
     }
 
 }

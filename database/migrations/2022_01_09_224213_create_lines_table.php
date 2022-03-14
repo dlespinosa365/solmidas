@@ -19,8 +19,8 @@ class CreateLinesTable extends Migration
             $table->timestamps();
             $table->string('number');
             $table->integer('order');
-            $table->string('identifier');
-            $table->longText('description');
+            $table->translatable('identifier');
+            $table->translatable('description');
             $table->string('unit');
             $table->double('unitPrice')->default(0);
             $table->string('calculateFunction')->nullable();
