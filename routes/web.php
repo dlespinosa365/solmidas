@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// fix to get medias from public folder with CORS activated
+Route::get('/media/{name}', function ($name) {
+    $myFile = public_path('medias/'.$name);
+    return response()->download($myFile) ;
 });
+

@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Structure;
+use App\Models\Media;
 use Illuminate\Http\Request;
 use App\Helpers\ResponseHelper;
 use Illuminate\Support\Facades\Auth;
 use App\Helpers\StructureHelper;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Mail;
+use App\Models\Estimate;
+
+
 
 class StructureController extends Controller
 {
@@ -48,6 +52,7 @@ class StructureController extends Controller
     {
         $user = Auth::user();
         $structure = StructureHelper::getStructureByRequest($request);
+        $structure->user_id = $user->id;
         try {
             if ($user->isAdmin) {
                 $structure->isPublic = true;
@@ -73,7 +78,11 @@ class StructureController extends Controller
     public function show($id)
     {
         $user = Auth::user();
-        $structure = StructureHelper::getFullStructure($id, $user->id);
+        if ($user->isAdmin) {
+            $structure = StructureHelper::getFullStructure($id);
+        } else {
+            $structure = StructureHelper::getFullStructure($id, $user->id);
+        }
         if ($structure != null) {
             return ResponseHelper::sendSuccess($structure, 200);
         }
@@ -148,35 +157,54 @@ class StructureController extends Controller
         return ResponseHelper::sendError('The code can\'t be updated.', 404);
     }
 
+    public function updateAdmin($id, Request $request) {
+        $structure = Structure::where('id', $id)->get()->first();
+        if ($structure != null) {
+            $structureData = StructureHelper::getRequestDataByAdmin($request, true);
+            $medias = Media::where('structure_id', $structure->id);
+            if ($medias) {
+                $medias->delete();
+            }
+            $structure->fill($structureData);
+            StructureHelper::addFilesToStructure($request, $structure);
+            $structure->update();
+        }
+        return ResponseHelper::sendSuccess(Structure::where('id', $structure->id)->with('medias', 'user')->get()->first(), 200);
+    }
+
+    public function updateCommon($id, Request $request) {
+        $user = Auth::user();
+        $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
+        if ($structure != null) {
+            $structureData = StructureHelper::getRequestDataByAdmin($request, false);
+            $structure->fill($structureData);
+            Estimate::where('structure_id', $structure->id)->delete();
+            $structure = StructureHelper::setAllDataInStructure($structure, $user);
+            $structure->update();
+            $structure = StructureHelper::getFullStructure($structure->id);
+        }
+        return ResponseHelper::sendSuccess($structure, 200);
+    }
+
     public function update($id, Request $request)
     {
         $user = Auth::user();
-        $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
         if ($user->isAdmin) {
             StructureHelper::validateStructureForAdmin($request);
         }
         else {
-            StructureHelper::validateStructure($request);
+            // StructureHelper::validateStructure($request);
         }
-        if ($structure != null) {
-            try {
-                $structureData = StructureHelper::getRequestDataByAdmin($request, $user->isAdmin);
-                $structure->fill($structureData);
-                $structure->estimate->delete();
-                $structure = StructureHelper::setAllDataInStructure($structure, $user);
-                $structure->medias()->delete();
-                if ($user->isAdmin) {
-                    $structure->isPublic = true;
-                    StructureHelper::addFilesToStructure($request, $structure);
-                }
-                $structure->update();
-                $structure = StructureHelper::getFullStructure($structure->id);
-                return ResponseHelper::sendSuccess($structure, 200);
+        try {
+            if ($user->isAdmin) {
+                return $this->updateAdmin($id, $request);
             }
-            catch (\Throwable $th) {
-
+            else {
+                return $this->updateCommon($id, $request);
             }
-
+        }
+        catch (\Throwable $th) {
+            dd($th);
         }
         return ResponseHelper::sendError('Configuration not found.', 400);
     }
@@ -189,7 +217,11 @@ class StructureController extends Controller
 
     public function pdf($id) {
         $user = Auth::user();
-        $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
+        if ($user->isAdmin) {
+            $structure = Structure::where('id', $id)->get()->first();
+        } else {
+            $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
+        }
         if ($structure) {
             $structureFull = StructureHelper::getFullStructure($structure->id, $user->id);
             $data = [

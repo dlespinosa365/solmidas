@@ -249,11 +249,11 @@ class StructureHelper
     {
         if ($request->hasfile('files')) {
             foreach ($request->file('files') as $file) {
-                $path = $file->store('medias', 'medias');
                 $name = $file->getClientOriginalName();
+                $file->storeAs('medias', $name, 'medias');
                 $data = [
                     'name' => $name,
-                    'path' => $path,
+                    'path' => 'media/'.$name,
                     'structure_id' => $structure->id
                 ];
                 Media::insert($data);

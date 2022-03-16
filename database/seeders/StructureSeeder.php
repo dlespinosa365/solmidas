@@ -25,19 +25,19 @@ class StructureSeeder extends Seeder
                 'medias' => [
                     [
                         'name' => '1.jpg',
-                        'path' => 'medias/1.jpg'
+                        'path' => 'media/1.jpg'
                     ],
                     [
                         'name' => 'video1.mp4',
-                        'path' => 'medias/video1.mp4'
+                        'path' => 'media/video1.mp4'
                     ],
                     [
                         'name' => '12.jpg',
-                        'path' => 'medias/12.jpg'
+                        'path' => 'media/12.jpg'
                     ],
                     [
                         'name' => '13.jpg',
-                        'path' => 'medias/13.jpg'
+                        'path' => 'media/13.jpg'
                     ]
                 ]
             ],
@@ -52,11 +52,11 @@ class StructureSeeder extends Seeder
                 'medias' => [
                     [
                         'name' => '2.jpg',
-                        'path' => 'medias/2.jpg'
+                        'path' => 'media/2.jpg'
                     ],
                     [
                         'name' => '21.jpg',
-                        'path' => 'medias/21.jpg'
+                        'path' => 'media/21.jpg'
                     ]
                 ]
             ],
@@ -72,15 +72,15 @@ class StructureSeeder extends Seeder
                 'medias' => [
                     [
                         'name' => '3.jpg',
-                        'path' => 'medias/3.jpg'
+                        'path' => 'media/3.jpg'
                     ],
                     [
                         'name' => '31.jpg',
-                        'path' => 'medias/31.jpg'
+                        'path' => 'media/31.jpg'
                     ],
                     [
                         'name' => '32.jpg',
-                        'path' => 'medias/32.jpg'
+                        'path' => 'media/32.jpg'
                     ]
                 ]
             ],
@@ -95,7 +95,7 @@ class StructureSeeder extends Seeder
                 'medias' => [
                     [
                         'name' => '4.jpg',
-                        'path' => 'medias/4.jpg'
+                        'path' => 'media/4.jpg'
                     ]
                 ]
             ],
@@ -109,7 +109,7 @@ class StructureSeeder extends Seeder
                 'medias' => [
                     [
                         'name' => '5.jpg',
-                        'path' => 'medias/5.jpg'
+                        'path' => 'media/5.jpg'
                     ]
                 ]
             ]

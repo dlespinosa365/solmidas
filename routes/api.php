@@ -33,7 +33,7 @@ Route::group(['middleware' => ['setLocale']], function () {
         Route::get('/structure/show/{id}', [StructureController::class, 'show']);
         Route::get('/structure/edit', [StructureController::class, 'edit']);
         Route::delete('/structure/destroy/{id}', [StructureController::class, 'destroy']);
-        Route::put('/structure/update/{id}', [StructureController::class, 'update']);
+        Route::post('/structure/update/{id}', [StructureController::class, 'update']);
         Route::get('/structure', [StructureController::class, 'index']);
         Route::get('/structure/pdf/{id}', [StructureController::class, 'pdf']);
     });
