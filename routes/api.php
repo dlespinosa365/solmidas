@@ -24,6 +24,7 @@ Route::group(['middleware' => ['setLocale']], function () {
         Route::get('/auth/verify-email/{id}/{hash}', [AuthController::class, 'verify'])->name('verification.verify');
         Route::get('/auth/logout', [AuthController::class, 'logout']);
         Route::post('/structure/store', [StructureController::class, 'store']);
+        Route::get('/structure/pdf/{id}', [StructureController::class, 'pdf']);
     });
 
 
@@ -35,7 +36,7 @@ Route::group(['middleware' => ['setLocale']], function () {
         Route::delete('/structure/destroy/{id}', [StructureController::class, 'destroy']);
         Route::post('/structure/update/{id}', [StructureController::class, 'update']);
         Route::get('/structure', [StructureController::class, 'index']);
-        Route::get('/structure/pdf/{id}', [StructureController::class, 'pdf']);
+        
     });
 
 

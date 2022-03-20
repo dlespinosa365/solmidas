@@ -12,10 +12,67 @@ use App\Models\Estimate;
 use App\Models\TileType;
 use App\Models\CoverFacadeType;
 use App\Models\Media;
+use App\Helpers\LocaleHelper;
+use Illuminate\Support\Facades\App;
 
 class Structure extends Model
 {
     use HasFactory;
+
+    public function __construct(array $attributes = array())
+    {
+        parent::__construct($attributes);
+        $locales = LocaleHelper::getLocales();
+        foreach ($locales as $locale) {
+            foreach (static::$translatable_attributes as $attribute) {
+                array_push($this->hidden, $attribute . '_' . $locale);
+            }
+        }
+    }
+
+    public static $translatable_attributes = ['description', 'title'];
+
+    public function setDescriptionAttribute($value)
+    {
+        $currentLocale = App::getLocale();
+        $this->attributes['description_' . $currentLocale] = $value;
+    }
+
+    public function getDescriptionAttribute()
+    {
+        $currentLocale = App::getLocale();
+        $fallbackLocale = config('app.fallback_locale');
+        $value = $this->attributes['description_' . $currentLocale];
+
+        if ($value == null && $value == '') {
+            $value = $this->attributes['description_' . $fallbackLocale];
+            if ($value == null && $value == '') {
+                $value = $this->attributes['description_es'];
+            }
+        }
+        return $value;
+    }
+
+    public function setTitleAttribute($value)
+    {
+        $currentLocale = App::getLocale();
+        $this->attributes['title_' . $currentLocale] = $value;
+    }
+
+    public function getTitleAttribute()
+    {
+        $currentLocale = App::getLocale();
+        $fallbackLocale = config('app.fallback_locale');
+        $value = $this->attributes['title_' . $currentLocale];
+
+        if ($value == null && $value == '') {
+            $value = $this->attributes['title_' . $fallbackLocale];
+            if ($value == null && $value == '') {
+                $value = $this->attributes['title_es'];
+            }
+        }
+        return $value;
+    }
 
     
     /**
@@ -36,10 +93,10 @@ class Structure extends Model
         'shoes',
         'floor',
         'metalClosure',
-        'coverType',
+        'cover_type',
         'coverDensity',
         'cover_tile_type',
-        'facadeType',
+        'facade_type',
         'facadeDensity',
         'facade_tile_type',
         'anticorrosiveTreatment',
@@ -73,8 +130,6 @@ class Structure extends Model
      */
     protected $attributes = [
         'code' => '',
-        'description' => '',
-        'title' => '',
         'isPublic' => false,
         'withPlatibanda' => false,
         'distanceBetweenFrames' => 0,
@@ -248,6 +303,16 @@ class Structure extends Model
             'rigidFramesOptions' => $rigidFrames,
             'tileTypeOptions' => $tileTypes,
             'coverFacadeTypeOptions' => $coverFacadeTypes
+        ];
+    }
+
+    public function getForAdmin() {
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'medias' => $this->medias,
+            'user' => $this->user
         ];
     }
 

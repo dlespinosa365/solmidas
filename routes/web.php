@@ -19,3 +19,8 @@ Route::get('/media/{name}', function ($name) {
     return response()->download($myFile) ;
 });
 
+Route::get('/media/line/help', function () {
+    $myFile = public_path('medias/lineHelp.xlsx');
+    return response()->download($myFile) ;
+});
+

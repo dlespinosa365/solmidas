@@ -16,14 +16,14 @@ class VerifyEmail extends VerifyEmailBase
         if (static::$toMailCallback) {
             return call_user_func(static::$toMailCallback, $notifiable, $verificationUrl);
         }
-
-        $verificationUrl = str_replace('api.solmidas.com/api/auth', 'solmidas.com/user', $verificationUrl);
+        $domain = env('APP_FRONT');
+        $verificationUrl = str_replace($domain . '/api/auth', 'solmidas.com/user', $verificationUrl);
 
         return (new MailMessage)
-            ->subject(Lang::get('Verificación de correo'))
-            ->line(Lang::get('Por favor haga click en el siguente botón para verificar su correo electronico.'))
-            ->action(Lang::get('Verificar'), $verificationUrl)
-            ->line(Lang::get('Si usted no ha creado una cuenta en Solmidas, ignore este correo.'));
+            ->subject(Lang::get('Verify Email Address'))
+            ->line(Lang::get('Please click the button below to verify your email address.'))
+            ->action(Lang::get('Verify Email Address'),  $verificationUrl)
+            ->line(Lang::get('If you did not create an account, no further action is required.'));
             
     }
 }

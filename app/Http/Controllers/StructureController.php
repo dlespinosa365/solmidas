@@ -28,7 +28,7 @@ class StructureController extends Controller
             $structures = Structure::orderBy('created_at', 'desc')->with('user', 'medias')->get();
             return ResponseHelper::sendSuccess($structures, 200);
         }
-        $structures = Structure::where('user_id', $user->id)->with('user', 'medias')->get();
+        $structures = Structure::where('user_id', $user->id)->orderBy('created_at', 'desc')->with('user', 'medias')->get();
         return ResponseHelper::sendSuccess($structures, 200);
     }
 
@@ -58,7 +58,7 @@ class StructureController extends Controller
                 $structure->isPublic = true;
                 $structure->save();
                 StructureHelper::addFilesToStructure($request, $structure);
-                return ResponseHelper::sendSuccess(Structure::where('id', $structure->id)->with('medias')->first(), 200);
+                return ResponseHelper::sendSuccess(Structure::where('id', $structure->id)->with('medias')->first()->getForAdmin(), 200);
             }
             $structure = StructureHelper::setAllDataInStructure($structure, $user);
             $structure = StructureHelper::getFullStructure($structure->id);
@@ -169,7 +169,7 @@ class StructureController extends Controller
             StructureHelper::addFilesToStructure($request, $structure);
             $structure->update();
         }
-        return ResponseHelper::sendSuccess(Structure::where('id', $structure->id)->with('medias', 'user')->get()->first(), 200);
+        return ResponseHelper::sendSuccess(Structure::where('id', $structure->id)->get()->first()->getForAdmin(), 200);
     }
 
     public function updateCommon($id, Request $request) {
@@ -210,8 +210,8 @@ class StructureController extends Controller
     }
     public function getPublicStructures()
     {
-        $structures = Structure::where('isPublic', true)->with('medias')->get();
-        $structures = $structures->map->only(['title', 'description', 'medias']);
+        $structures = Structure::where('isPublic', true)->orderBy('created_at', 'desc')->with('medias')->get();
+        $structures = $structures->map->only(['title', 'description', 'medias', 'id']);
         return ResponseHelper::sendSuccess($structures, 200);
     }
 
@@ -222,7 +222,7 @@ class StructureController extends Controller
         } else {
             $structure = Structure::where('id', $id)->where('user_id', $user->id)->get()->first();
         }
-        if ($structure) {
+        if ($structure != null) {
             $structureFull = StructureHelper::getFullStructure($structure->id, $user->id);
             $data = [
                 'structure' => $structureFull, 
@@ -241,7 +241,7 @@ class StructureController extends Controller
             'user' => $user
         ];
         $pdf = PDF::loadView('pdf', $data)->setOptions(['defaultFont' => 'sans-serif']);
-        Mail::send('structure', ['$data' => $data], function ($m) use ($pdf, $structure) {
+        Mail::send('structure', ['data' => $data], function ($m) use ($pdf, $structure) {
             $m->from('solmidas@solmidas.com', 'Solmidas');
             $m->to('solmidas@solmidas.com', 'Solmidas')->subject('Nueva configuración creada!');
             $m->attachData($pdf->output(), $structure->code.'.pdf');

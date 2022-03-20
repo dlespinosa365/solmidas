@@ -20,8 +20,12 @@ class SetLocale
     public function handle(Request $request, Closure $next, ...$guards)
     {
         $availableLocales = LocaleHelper::getLocales();
-        if ($request->header('Accept-Language') && in_array($request->header('Accept-Language'), $availableLocales))
+        if ($request->header('Accept-Language') && in_array($request->header('Accept-Language'), $availableLocales)) {
             App::setLocale($request->header('Accept-Language'));
+        } else {
+            App::setLocale('es');
+        }
+            
         return $next($request);
     }
 }

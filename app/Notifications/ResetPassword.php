@@ -11,13 +11,14 @@ class ResetPassword extends ResetPasswordBase
     // change as you want
     public function buildMailMessage($url)
     {
-        $url = str_replace('api.solmidas.com/api/auth', 'solmidas.com/user',$url);
+        $domain = env('APP_FRONT');
+        $url = str_replace($domain . '/api/auth', 'solmidas.com/user',$url);
 
         return (new MailMessage)
-            ->subject(Lang::get('Notificacion de reestablecimiento de contraseña'))
-            ->line(Lang::get('Recibiste este email porque solicitaste un reestablecimiento de tu contraseña'))
-            ->action(Lang::get('Reestablecer'), $url)
-            ->line(Lang::get('Este enlace expirara en :count minutos.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('Si no solicitaste el reestablecimiento de tu contraseña, ignora este mensaje.'));
+            ->subject(Lang::get('Reset Password Notification'))
+            ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
+            ->action(Lang::get('Reset Password'), $url)
+            ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+            ->line(Lang::get('If you did not request a password reset, no further action is required.'));
     }
 }

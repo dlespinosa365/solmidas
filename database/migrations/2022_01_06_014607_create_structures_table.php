@@ -18,8 +18,8 @@ class CreateStructuresTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('code')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('title')->nullable();
+            $table->translatable('description');
+            $table->translatable('title');
             $table->boolean('isPublic')->default(false);
             $table->boolean('withPlatibanda')->default(false);
             $table->integer('distanceBetweenFrames')->nullable();

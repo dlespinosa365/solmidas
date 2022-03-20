@@ -7,7 +7,6 @@
     <meta name="x-apple-disable-message-reformatting">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="telephone=no" name="format-detection">
-    <title>{{$structure->code}}</title>
     <!--[if (mso 16)]>
     <style type="text/css">
     a {text-decoration: none;}
@@ -442,13 +441,13 @@
                                                                 </td>
                                                                 <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Telefono: :telefono', ['telefono' => $user->phone]) }}</p>
+                                                                        {{ __('Teléfono: :teléfono', ['telefono' => $user->phone]) }}</p>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Direccion: :direccion', ['direccion' => $structure->council->name]) }}</p>
+                                                                        {{ __('Dirección: :direccion', ['direccion' => $structure->council->name]) }}</p>
                                                                 </td>
                                                                 <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
@@ -591,7 +590,7 @@
                                                                 <td class="es-m-txt-l" bgcolor="#ffffff" align="left" style="Margin:0;padding-top:20px;padding-bottom:20px;padding-left:30px;padding-right:30px">
 
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('El ensamblaje de todas las partes que componen las estructuras será mediante soldaduras semiautomáticas con alambre ER 70S-6 de Ø 1.2-1.6mm bajo gases protectores, ¨Gas Metal arc welding¨ (GMAW).') }}
+                                                                        {{ __('El ensamblaje de todas las partes que componen las estructuras será mediante soldaduras semiautomáticas con alambre ER 70S-6 de D 1.2-1.6mm bajo gases protectores, B(Gas Metal arc weldingB( (GMAW).') }}
                                                                     </p>
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
@@ -599,7 +598,7 @@
                                                                     </p>
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Tratamiento superficial: decapado abrasivo al grado Sa 2 ½ según la norma ISO8501-1: 2007.') }}
+                                                                        {{ __('Tratamiento superficial: decapado abrasivo al grado Sa 2 B= según la norma ISO8501-1: 2007.') }}
                                                                     </p>
                                                                     @if($structure->anticorrosiveTreatment)
                                                                     <br>
@@ -618,7 +617,7 @@
                                                                     </p>
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Inclinación de la cubierta: 5º') }}
+                                                                        {{ __('Inclinación de la cubierta: 5B:') }}
                                                                     </p>
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
@@ -671,12 +670,12 @@
                                                                     @if($structure->isFacadeTejasSimpleType())
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Canales simples conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, Ø 140mm para descarga de aguas pluviales.') }}
+                                                                        {{ __('Canales simples conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, D 140mm para descarga de aguas pluviales.') }}
                                                                     </p>
                                                                     @else
                                                                     <br>
                                                                     <p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;line-height:27px;color:#666666;font-size:18px">
-                                                                        {{ __('Canales simples con aislamiento conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, Ø 140mm para descarga de aguas pluviales') }}
+                                                                        {{ __('Canales simples con aislamiento conformados en frio de acero clase S 320GD y tubos de PVC 0,4 MPa, D 140mm para descarga de aguas pluviales') }}
                                                                     </p>
                                                                     @endif
                                                                 </td>
@@ -926,10 +925,6 @@
                                                                             <td collspan="2" align="center">{{ __('Precio de venta total')}}</td>
                                                                         </tr>
                                                                         @foreach ($structure->estimate->linesOptions as $lineOption)
-                                                                            @if ($loop->index != 0 && $loop->index % 7 == 0) 
-                                                                                <div class="page-break"></div>
-                                                                                <div style="height: 30px"></div>
-                                                                            @endif
                                                                             @if ($lineOption->total > 0)
                                                                                 <tr>
                                                                                     <td collspan="6" style="padding-left:5px">{{ $lineOption->line()->first()->description }}</td>
@@ -1062,13 +1057,13 @@
                                                             <tr style="border-collapse:collapse">
                                                                 <td align="center" style="padding:0;Margin:0;padding-top:30px;padding-left:30px;padding-right:30px">
                                                                     <h3 style="Margin:0;line-height:24px;mso-line-height-rule:exactly;font-family:lato, 'helvetica neue', helvetica, arial, sans-serif;font-size:20px;font-style:normal;font-weight:normal;color:#111111">
-                                                                        {{ _('Necesitas un poco de ayuda?')}}</h3>
+                                                                        {{ __('Necesitas un poco de ayuda?') }}</h3>
                                                                 </td>
                                                             </tr>
                                                             <tr style="border-collapse:collapse">
                                                                 <td esdev-links-color="#ffa73b" align="center" style="padding:0;Margin:0;padding-bottom:30px;padding-left:30px;padding-right:30px">
                                                                     <a target="_blank" href="https://solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
-                                                                    {{ _('Estamos listos para hablar')}}</a> |
+                                                                    {{ __('Estamos listos para hablar')}}</a> |
                                                                     <a target="_blank" href="https://solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
                                                                     +351 915 572 385 </a> | 
                                                                     <a target="_blank" href="mailto:solmidas@solmidas.com" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:underline;color:#ffa73b;font-size:18px">
